@@ -27,13 +27,32 @@ Growing Up Diary
 目標を事前に立て、スケジュールを組み、現在の達成度と目標の達成度の確認に利用します。
 
 ## 設計書
+
 ワイヤーフレーム(随時追加や修正を行う)
 https://www.draw.io/#G1TtuGFYyLQ75PGQa9BOwKPgS51glJHucf
 
-テーブル定義書
 
-WBS
+ER図(随時追加や修正を行う)
+https://www.draw.io/#G1-mt4wdybIgPPs2mBFVLlGiKcAMIYoVwZ
 
+
+テーブル定義書(随時追加や修正を行う)
+https://docs.google.com/spreadsheets/d/1I94jgqYYzCfEmcv_RKU3N8BCHJCPJKyd/edit#gid=1895200151
+
+
+アプリケーション詳細設計(随時追加や修正を行う)
+https://docs.google.com/spreadsheets/d/1HfkYe5-gdLlqMmV1Blmbcq-tq4jtbI8I/edit#gid=1336216968
+
+
+WBS(随時更新や修正を行う)
+https://docs.google.com/spreadsheets/d/10qgWWXfqsdCreb1ldWEAhgRUh9jJRDVY72RyEGKbWEA/edit#gid=977420151
+
+
+ブランチ管理表（随時更新）
+https://docs.google.com/spreadsheets/d/1URUys4_6iPsqVaQ4B3tgQ_hFsjfDQAV1HsC-R45Woao/edit#gid=0
+
+
+テスト仕様書（作成次第、リンク貼り付け）
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1EuKVUJep4hLsCQZZ0rS8y1J-YCiMJEfGFkBOCX_ZLsc/edit#gid=0
