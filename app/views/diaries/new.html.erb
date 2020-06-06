@@ -1,0 +1,17 @@
+<h1>日記投稿画面</h1>
+
+<%= form_for(@diary_new) do |f| %>
+ 
+    <span>タイトル</span><br>
+    <%= f.text_field :title %><br>
+ 
+    <span>内容</span><br>
+    <%= f.text_field :body %><br>
+    
+    <span>プロフィール画像</span><br>
+    <%= attachment_image_tag @diary_new, :image, :fill, 60, 60, fallback: "no_image.jpg"%>
+    <%= f.attachment_field :image %>
+ 
+    <%= f.submit '投稿する' %>
+ 
+<% end %>
