@@ -79,10 +79,11 @@
           <span>プロフィール画像</span>
         </div>
         <div class='col-xs-2'>
+          <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
         <%= f.attachment_field :profile_image %>
         </div>
       </div>
-    <br> <!--改行による隙間-->
+    <br> 
       <div class='row'>
         <div class='col-xs-2'></div>
         <div class='col-xs-1'>

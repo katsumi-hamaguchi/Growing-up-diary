@@ -1,0 +1,19 @@
+<h1>日記詳細</h1>
+
+<table class="table">
+	<tr>
+		<td>
+			<%= link_to (@diary.user) do %>
+			<%= attachment_image_tag(@diary.user, :profile_image, fallback: "no_image.jpg", size: "100x100") %><br>
+			<%= @diary.user.nickname %>
+			<% end %>
+		</td>
+		<td><%= link_to @diary.title, @diary %></td>
+		<td><%= @diary.body %></td>
+		<td><%= attachment_image_tag(@diary, :image, fallback: "no_image.jpg", size: "100x100") %></td>
+	<% if @diary.user == current_user %>
+		<td><%= link_to "編集する",edit_diary_path(@diary), class: "btn-sm btn-success edit_book_#{@diary.id}" %></td>
+		<td><%= link_to "削除する",@diary, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_book_#{@diary.id}" %></td>
+	<% end %>
+	</tr>
+</table>

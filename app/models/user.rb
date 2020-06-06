@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   attachment :profile_image
+  has_many :tasks, dependent: :destroy
+  has_many :diaries, dependent: :destroy
 
   def active_for_authentication?
     super && (self.is_deleted == true)   #is_deleted==trueなら（退会したユーザー）を再度ログインできないようにする
