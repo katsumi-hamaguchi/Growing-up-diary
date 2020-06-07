@@ -1,4 +1,21 @@
 <h1><strong><%= @user.nickname %></strong>さんのスケジュール</h1>
-
+<div class='row'>
+  <div class='col-xs-8'>
+<div id="calendar"></div>
+<%= link_to 'スケジュール追加', events_path(current_user.id) %>
+  </div>
+  <div class='col-xs-4'>
 <span><strong><%= @user.nickname %></strong>さんの目標内容</span>
-<span><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "100x100" %></span>
+<span><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "60x60" %></span>
+  </div>
+  <div class='col-xs-4'>
+  	<h4>通算日数</h4>
+  	<h3>〇日経過！</h3>
+  </div>
+  <div class='col-xs-4'>
+  	<h4>目指す目標</h4>
+  </div>
+  <div class='col-xs-4'>
+  	<h4>達成済み目標</h4>
+  </div>
+</div>
