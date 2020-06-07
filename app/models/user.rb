@@ -7,6 +7,7 @@ class User < ApplicationRecord
   attachment :profile_image
   has_many :tasks, dependent: :destroy
   has_many :diaries, dependent: :destroy
+  has_many :events, dependent: :destroy
 
   def active_for_authentication?
     super && (self.is_deleted == true)   #is_deleted==trueなら（退会したユーザー）を再度ログインできないようにする

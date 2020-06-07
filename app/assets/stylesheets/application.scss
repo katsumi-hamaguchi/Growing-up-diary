@@ -12,6 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require fullcalendar
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#calendar{
+	width:850px;
+}
