@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :diaries, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :diary_comments, dependent: :destroy
   
   def User.search(search, diary_or_user, how_search)
       if how_search == "1"
