@@ -12,7 +12,7 @@
 			<%= attachment_image_tag(diary.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %>
 			<% end %>
 		</td>
-		<td><%= @user.nickname %></td>
+		<td><%= diary.user.nickname %></td>
 		<td><%= diary.title %></td>
 		<td><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary" %></td>
 		<% if diary.favorited_by?(current_user) %>

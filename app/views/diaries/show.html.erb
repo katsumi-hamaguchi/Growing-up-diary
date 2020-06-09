@@ -17,3 +17,21 @@
 	<% end %>
 	</tr>
 </table>
+
+<div class="row">
+  <div class="col-sm-4">
+    <%= form_for [@diary, @diary_comment] do |f| %>
+      <%= f.text_area :comment, rows:'6', class: "form-control",placeholder: "コメントをここに" %>
+      <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20" %>
+    <% end %>
+  </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-6">
+    <% @diary.diary_comments.each do |diary_comment| %>   
+      <a href="#" class="link-author"><%= diary_comment.user.nickname %></a>   
+      <span class="comment-date"><%= diary_comment.created_at.strftime('%Y/%m/%d') %></span>
+      <span class="comment-entry"><%= diary_comment.comment %></span>
+      <br>
+    <% end %>
+  </div>
+</div>

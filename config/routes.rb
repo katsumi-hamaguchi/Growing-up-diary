@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :diaries do
     resource :favorites, only: [:create, :destroy]
+    resource :diary_comments, only: [:create, :destroy]
   end
   get 'diaries/index_all/:id' => 'diaries#index_all',as:"index_all"
   resources :tasks
