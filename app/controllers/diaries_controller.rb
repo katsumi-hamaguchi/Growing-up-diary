@@ -45,6 +45,12 @@ class DiariesController < ApplicationController
 	    @diaries = Diary.all	
 	end
 
+	def search		
+	end
+
+	def search_all		
+	end
+
 	def update_release		
 	end
 
