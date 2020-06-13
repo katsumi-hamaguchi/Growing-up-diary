@@ -53,6 +53,16 @@ class UsersController < ApplicationController
         redirect_to root_path		
 	end
 
+	def followers
+    @user  = User.find(params[:id])
+    @users = @user.followers
+    end
+
+    def following
+    @user  = User.find(params[:id])
+    @users = @user.followings
+    end
+
 	private #ストロングパラメータ
 	  def user_params
 	      params.require(:user).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :nickname, :email, :postcode, :password, :password_confirmation, :prefecture_code, :address_city, :address, :profile_image)

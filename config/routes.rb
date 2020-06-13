@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   put 'users/retire/:id' => 'users#update_user', as: "retire"
   get 'users/change_pass/:id' => 'users#change_pass',as:"change_pass" 
   put 'pass/change/:id' => 'users#update_pass', as: "change"
+  get 'users/follows/:id' => 'users#following',as:"follows_show"
+  get 'users/followers/:id' => 'users#followers',as:"followers_show"
 
   resources :diaries do
     resource :favorites, only: [:create, :destroy]
@@ -18,4 +20,6 @@ Rails.application.routes.draw do
 
   get 'search' => 'searches#search',as:'search'
   get 'search_all' => 'searches#search_all',as:'search_all'
+
+  resources :relationships, only: [:create, :destroy]
 end

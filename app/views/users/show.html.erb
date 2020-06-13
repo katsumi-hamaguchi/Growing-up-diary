@@ -1,4 +1,4 @@
-<h1><strong>マイページ</strong></h1>
+<h1><strong><%= @user.nickname %></strong>さんの情報</h1>
 <div class='row'>
   <div class='col-xs-3'>
     <table class="table">
@@ -9,15 +9,22 @@
 		</tr>
 		<tr>
 			<th>フォロー人数</th>
-			<th>〇〇人</th>
+			<th><%= link_to follows_show_path(@user.id) do %><%= @user.followings.count %>人<% end %></th>
 		</tr>
 		<tr>
 			<th>フォロワー人数</th>
-        	<th>〇〇人</th>
+        	<th><%= link_to followers_show_path(@user.id) do %><%= @user.followers.count %>人<% end %></th>
+        	<%if current_user == @user %>
         	<%= link_to ' 編集する', edit_user_path(current_user.id),class: "btn btn-primary" %>
+        	<% end %>
+        </tr>
+        <tr>
+        	<th><%= render "relationships/follow_button", user: @user %></th>
+        	<th></th>
         </tr>	
     </table>
   </div>
 </div>
-
+<%if current_user == @user %>
 <%= render 'tasks/index', task: @task, tasks: @tasks %>
+<% end %>
