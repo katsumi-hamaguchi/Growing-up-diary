@@ -1,0 +1,6 @@
+<h1>勉強時間編集画面</h1>
+
+    <%= form_for [@goal, @stack] do |f| %>
+      <%= f.number_field :study_time, step: '0.1', class:'input_form' %>
+      <%= f.submit "変更する", class: "btn btn-lg btn-base-1 mt-20" %>
+    <% end %>

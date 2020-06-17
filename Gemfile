@@ -69,3 +69,5 @@ gem 'jp_prefecture'
 gem 'jquery-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem "chartkick"
+gem 'groupdate'

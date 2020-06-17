@@ -1,6 +1,9 @@
 class DiariesController < ApplicationController
 	def new
-	    @diary_new = Diary.new	
+	    @diary_new = Diary.new
+	    @user = current_user
+	    @tasks = @user.tasks
+	    @task = Task.new	
 	end
 
 	def create		
@@ -12,7 +15,9 @@ class DiariesController < ApplicationController
 
 	def index
 		@user = current_user
-	    @diaries = @user.diaries		
+	    @diaries = @user.diaries
+	    @tasks = @user.tasks
+	    @task = Task.new		
 	end
 
 	def show

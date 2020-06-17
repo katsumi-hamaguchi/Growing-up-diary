@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :diaries do
     resource :favorites, only: [:create, :destroy]
-    resource :diary_comments, only: [:create, :destroy]
+    resources :diary_comments, only: [:create, :destroy]
   end
   get 'diaries/index_all/:id' => 'diaries#index_all',as:"index_all"
   resources :tasks
@@ -22,4 +22,8 @@ Rails.application.routes.draw do
   get 'search_all' => 'searches#search_all',as:'search_all'
 
   resources :relationships, only: [:create, :destroy]
+  resources :goals do
+    resources :stacks
+  end
+
 end

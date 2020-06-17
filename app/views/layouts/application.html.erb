@@ -36,7 +36,8 @@
                 <li><%= link_to '日記投稿', new_diary_path(current_user.id), class: 'glyphicon glyphicon-user users' %></li>
                 <li><%= link_to 'My日記一覧', diaries_path(current_user.id), class: 'glyphicon glyphicon-book books' %></li>
                 <li><%= link_to 'みんなの日記', index_all_path(current_user.id), class: 'glyphicon glyphicon-book books' %></li>
-                <li><%= link_to '目標一覧', tasks_path(current_user.id), class: 'glyphicon glyphicon-home home' %></li>
+                <li><%= link_to '目標登録', new_goal_path(current_user.id), class: 'glyphicon glyphicon-user users' %></li>
+                <li><%= link_to '目標一覧', goals_path(current_user.id), class: 'glyphicon glyphicon-home home' %></li>
                 <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
               <% else %>
                 <li><%= link_to '新規登録', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
