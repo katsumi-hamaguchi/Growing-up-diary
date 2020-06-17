@@ -16,6 +16,8 @@
 //= require jquery
 //= require moment
 //= require fullcalendar
+//= require chartkick
+//= require Chart.bundle
 
 //= require_tree .
 
