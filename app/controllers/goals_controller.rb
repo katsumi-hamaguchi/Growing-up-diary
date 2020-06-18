@@ -1,7 +1,10 @@
 class GoalsController < ApplicationController
 
     def new 
-        @goal_new = Goal.new 	
+        @goal_new = Goal.new
+        @user = current_user
+	    @tasks = @user.tasks
+	    @task = Task.new 	
     end
 
 	def create
@@ -13,7 +16,9 @@ class GoalsController < ApplicationController
 
 	def index
 	    @user = current_user
-	    @goals = @user.goals		
+	    @goals = @user.goals
+	    @tasks = @user.tasks
+	    @task = Task.new		
 	end
 
 	def show

@@ -48,7 +48,10 @@ class DiariesController < ApplicationController
 
 	def index_all
 		@user = User.find(params[:id])
-	    @diaries = Diary.all	
+	    @diaries = Diary.all
+	    @current_user = current_user
+	    @tasks = @current_user.tasks
+	    @task = Task.new	
 	end
 
 	def search		
