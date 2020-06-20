@@ -1,57 +1,62 @@
-<h1><strong><%= @user.nickname %></strong>さんの情報</h1>
-<div class='row'>
-  <div class='col-xs-3'>
-    <table class="table">
-		<tr><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "100x100" %></tr>
-		<tr>
-			<th>ニックネーム</th>
-			<th><%= @user.nickname %></th>
-		</tr>
-		<tr>
-			<th>フォロー人数</th>
-			<th><%= link_to follows_show_path(@user.id) do %><%= @user.followings.count %>人<% end %></th>
-		</tr>
-		<tr>
-			<th>フォロワー人数</th>
-        	<th><%= link_to followers_show_path(@user.id) do %><%= @user.followers.count %>人<% end %></th>
-        	<%if current_user == @user %>
-        	<%= link_to ' 編集する', edit_user_path(current_user.id),class: "btn btn-primary" %>
-        	<% end %>
-        </tr>
-        <tr>
-          <th>日記投稿数</th>
-          <th><%= @user.diaries.count %>回</th>
-        </tr>  
-        <tr>
-        	<th><%= render "relationships/follow_button", user: @user %></th>
-        	<th></th>
-        </tr>
-    </table>
-  </div>
-<div class='col-xs-1'></div>
-<div class='col-xs-3'>
-    <%if current_user == @user %>
-    <%= render 'tasks/index', task: @task, tasks: @tasks %>
-    <% end %>
-</div>
-
-  <div class='col-xs-3'>
-      <%if current_user == @user %>
-        <h3>設定目標の一覧表示</h3>
-        <% @user.goals.each do |user| %>
-        <tr>
-            <td>
-                <%= link_to(@user) do %>
-                <%= attachment_image_tag(@user, :profile_image, fallback: "no_image.jpg", size: "60x60") %>
-                <% end %>
-            </td>
-            <td><%= @user.nickname %></td>
-            <td><%= user.title %></td>
-            <td><%= link_to "詳細", goal_path(user.id),class: "btn btn-primary" %></td>
-            <br>
-          </tr>
+<body class ="show-body">
+  <div class="show-content">
+    <h1><strong><%= @user.nickname %></strong>さんの情報</h1>
+    <div class='row'>
+      <div class='col-xs-3'>
+        <table id ="profile",class="table">
+    		<tr><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "150x150" %>  
+        </tr><br><br>
+    		<tr>
+    			<th>ニックネーム</th>
+    			<th><%= @user.nickname %></th>
+    		</tr>
+    		<tr>
+    			<th>フォロー人数</th>
+    			<th><%= link_to follows_show_path(@user.id) do %><%= @user.followings.count %>人<% end %></th>
+    		</tr>
+    		<tr>
+    			<th>フォロワー人数</th>
+            	<th><%= link_to followers_show_path(@user.id) do %><%= @user.followers.count %>人<% end %></th>
+            	<%if current_user == @user %>
+            	<%= link_to ' 編集する', edit_user_path(current_user.id),class: "btn btn-primary" %>
+            	<% end %>
+            </tr>
+            <tr>
+              <th>日記投稿数</th>
+              <th><%= @user.diaries.count %>回</th>
+            </tr>  
+            <tr>
+            	<th><%= render "relationships/follow_button", user: @user %></th>
+            	<th></th>
+            </tr>
+        </table>
+      </div>
+    <div class='col-xs-3'>
+        <%if current_user == @user %>
+        <%= render 'tasks/index', task: @task, tasks: @tasks %>
         <% end %>
-      <% end %>  
-  </div>
+    </div>
+
+      <div class='col-xs-6'>
+        <%if current_user == @user %>
+          <h3>設定目標の一覧表示</h3>
+          <div class ="show-goal">
+              <% @user.goals.each do |user| %>
+              <tr>
+                  <td>
+                      <%= link_to(@user) do %>
+                      <%= attachment_image_tag(@user, :profile_image, fallback: "no_image.jpg", size: "60x60") %>
+                      <% end %>
+                  </td>
+                  <td><%= @user.nickname %></td>
+                  <td><%= user.title %></td>
+                  <td><%= link_to "詳細", goal_path(user.id),class: "btn btn-primary" %></td>
+                  <br>
+                </tr>
+              <% end %>
+            <% end %>
+          </div>  
+      </div>
+    </div>
 </div>
 

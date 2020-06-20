@@ -1,3 +1,119 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-body{
+	background-image: image-url("event5_image.jpg");
+	background-size: 100% 130%;
+	background-repeat: no-repeat;
+    opacity: 1;
+}/*ユーザースケジュール管理画面のbody全体*/
+
+.event-headline{
+	font-size:250%;
+}/*ユーザースケジュール管理画面の～さんの記録部分*/
+
+.event-title{
+	font-size:180%;
+}/*ユーザースケジュール管理画面の～さんの記録の各見出し*/
+
+.event-content{
+	font-size:300%;
+	color:red;
+}/*ユーザースケジュール管理画面の～さんの記録の各見出しの内容*/
+
+.event-goal-content{
+	font-size:300%;
+	margin-top:20px;
+}/*ユーザースケジュール管理画面の目指す目標の内容*/
+
+.event-btn{
+	font-size:300%;
+	background-color:#CEF9DC;
+}/*ユーザースケジュール管理画面のスケジュール追加ボタン*/
+
+.event-back{
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.show-body{
+	background-color:#CEF9DC;
+}/*ユーザーマイページ画面のbody全体*/
+
+.show-content{
+    margin-top:80px;
+	margin-left:100px;
+}/*ユーザーマイページ画面のbody（ヘッダー除く）*/
+
+#profile{
+	font-size:250%;
+}/*ユーザーマイページプロフィール部分*/
+
+.show-goal{
+	font-size:250%;
+}/*ユーザーマイページの設定目標の内容部分*/
+
+.edit-body{
+	background-color:#CEF9DC;
+}/*ユーザー情報編集画面のbody全体*/
+
+.edit-content{
+    margin-top:80px;
+	margin-left:100px;
+}/*ユーザー情報編集画面のbody（ヘッダー除く）*/
+
+.user-edit-name{
+	 margin-left:14px;
+	 height:40px;
+ } /*ユーザー情報編集画面の名前（性）、（名）の入力部分*/
+
+ .user-edit-form{
+	 margin-left:55px;
+	 height:40px;
+ } /*ユーザー情報編集画面の名前、フリガナを除く入力部分*/
+
+ .form-user-edit{
+   height:40px;
+ } /*ユーザー情報編集画面のフリガナ入力部分*/
+
+ .withdrawal-body{
+   background-color:#CEF9DC;
+ }/*ユーザー退会画面のbody全体*/
+
+ .withdrawal-content{
+   text-align:center;
+   margin-top:200px;
+   font-size: 450%;
+   color:red;
+}/*ユーザー退会画面のbody（ヘッダー除く）*/
+
+.withdrawal-contents{
+   font-size: 30px;
+}/*ユーザー退会画面警告メッセージ*/
+
+.change-pass-body{
+   background-color:#CEF9DC;
+ }/*ユーザーパスワード変更画面のbody全体*/
+
+.change-pass-headline{
+   font-size:250%;
+}/*ユーザーパスワード変更画面見出し*/
+
+.change-pass-small-headline{
+	
+}
+
+.change-pass-content{
+   margin-top:200px;
+   margin-left:450px;
+}/*ユーザーパスワード変更画面のbody（ヘッダー除く）*/
+
+.change-pass-form{
+	 margin-left:55px;
+	 height:40px;
+ } /*ユーザーパスワード変更画面の入力部分*/
+
+ .change-pass-item{
+ font-size:150%;
+ } /*ユーザーパスワード変更画面の入力フォームの項目部分*/

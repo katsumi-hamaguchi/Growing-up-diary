@@ -1,40 +1,39 @@
-<body>
+<body class="sign-back">
   <%= flash[:error] %>
-  <div class="h_log">
-    <span class="h_gl">会員の方はこちらからログイン</span>
-    <%= flash[:error] %>
-  <br>
+  <div class = "log-body">
+  <span class="log-headline">会員の方はこちらからログイン</span>
+  <br><br>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class='row'>
         <div class='col-xs-1'></div>
         <div class='col-xs-2'>
-          <span>メールアドレス</span>
+          <span class='log-item'>メールアドレス</span>
         </div>
         <div class='col-xs-2'>
-          <%= f.email_field  :email, autofocus: true, autocomplete: "email", size:60, class: "h_log_f" %>
+          <%= f.email_field  :email, autofocus: true, autocomplete: "email", size:80, class: "log-form" %>
         </div>
-      </div>
+      </div><br>
 
       <div class='row'>
         <div class='col-xs-1'></div>
         <div class='col-xs-2'>
-        <span>パスワード </span>
+        <span class='log-item'>パスワード </span>
         </div>
         <div class='col-xs-2'>
-          <%= f.password_field :password, autocomplete: "current-password", size:60, class: "h_log_f" %>
+          <%= f.password_field :password, autocomplete: "current-password", size:80, class: "log-form" %>
         </div>
-      </div>
+      </div><br>
 
-      <div class="h_log_b"> 
+      <div class="log_btn"> 
       <br>  
         <%= f.submit "ログイン", class: "btn btn-primary" %>
       </div>
     <% end %>
   <br>
-    <span class="h_gl">登録がお済みでない方</span><br>
+    <span class="log-headline">登録がお済みでない方</span><br>
   <br>
     <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
     <span class="h_log_g"> <%= link_to "こちら", new_registration_path(resource_name) %>から新規登録を行ってください。</span>
     <% end %>
-  </div>
+  </div> 
 </body>

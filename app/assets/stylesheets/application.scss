@@ -18,5 +18,65 @@
 @import "bootstrap";
 
 #calendar{
-	width:850px;
-}
+	width:1100px;
+}/*スケジュール管理用のカレンダー*/
+
+.container-fluid{
+	background-color:#FFF0F5;
+}/*ヘッダーの背景色変更*/
+
+.sign-back{
+    background-color:#CEF9DC;
+}/*新規登録画面、ログイン画面*/
+
+.sign-headline{
+ margin-left:80px;
+ font-size:150%;
+ background-color:coral;
+ }  /*サインインアップ画面のの各見出し*/
+
+ .name-kana-mei{
+ margin-left:14px;
+ height:40px;
+ } /*新規登録画面の名前（性）、（名）の入力部分*/
+
+ .form-sign-up{
+ margin-left:55px;
+ height:40px;
+ } /*新規登録画面の名前、フリガナを除く入力部分*/
+
+ .sign_btn{
+ margin-left:700px;
+ }/*新規登録画面の新規登録ボタン*/
+
+ .sign-body{
+ margin-top:90px;
+ margin-left:400px;
+ } /*新規登録画面のbody全体*/
+
+.sign-form{
+ height:40px;
+ } /*新規登録画面のフリガナ入力部分*/
+
+ .log_btn{
+ margin-left:700px;
+ } /*ログイン画面のログインボタン*/
+
+ .log-headline{
+ margin-left:80px;
+ font-size:150%;
+ background-color:coral;
+ }  /*ログイン画面画面の各見出し*/
+
+ .log-body{
+ margin-top:150px;
+ margin-left:400px;
+ } /*ログイン画面のbody全体*/
+
+ .log-form{
+ height:40px;
+ } /*ログイン画面の入力フォーム部分*/
+
+ .log-item{
+ font-size:150%;
+ } /*ログイン画面の入力フォームの項目部分*/

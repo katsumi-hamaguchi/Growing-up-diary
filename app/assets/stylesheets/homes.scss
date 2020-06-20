@@ -1,3 +1,42 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body-layout{
+	background-image: image-url("top_image.jpg");
+	background-size: 100% 120%;
+	background-position:top;
+    color: white;
+    background-repeat: no-repeat;
+    opacity: 1;
+} //トップページのbody内背景画像設定
+
+.a{
+    
+	font-size:150%;
+}
+
+.b{
+    margin-top:80px;
+	font-size:50px;
+	color:white;
+	text-align: center;
+}
+
+.bb{
+    margin-top:150px;
+	font-size:50px;
+	color:white;
+	
+}
+
+.c{
+	font-size:50px;
+	color:white;	
+}
+
+.nn{
+	font-size:50px;
+	color:white;
+	text-align: center;	
+}
