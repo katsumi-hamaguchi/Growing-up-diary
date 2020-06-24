@@ -1,3 +1,12 @@
 // Place all the styles related to the Stacks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.stack-body{
+	background-color:#CEF9DC;
+}/*my日記検索結果画面のbody*/
+
+.stack-content{
+	margin-top:100px;
+	margin-left:400px;
+}/*my日記検索結果画面のbody（ヘッダー除く）*/

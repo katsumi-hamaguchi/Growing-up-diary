@@ -33,7 +33,13 @@
       </div>
     <div class='col-xs-3'>
         <%if current_user == @user %>
-        <%= render 'tasks/index', task: @task, tasks: @tasks %>
+        <h1>Myタスクリスト</h1>
+        <%= form_with(model:@task, remote:true ) do |f| %>
+          <span>タスク内容</span><br>
+          <%= f.text_field :body %>
+          <%= f.submit '追加する' %>
+        <% end %>
+        <div id="tasks"><%= render 'tasks/index',tasks: @tasks %></div>
         <% end %>
     </div>
 

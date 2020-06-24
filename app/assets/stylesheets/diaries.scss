@@ -1,3 +1,104 @@
 // Place all the styles related to the diaries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-body{
+	background-image: image-url("event_image.jpg");
+	background-size: 100% 200%;
+	background-repeat: no-repeat;
+	opacity: 1;
+}/*日記の投稿画面のbody全体*/
+
+.new-content{
+    margin-top:250px;
+	margin-left:100px;
+}/*日記の投稿画面のbody（ヘッダー除く）*/
+
+.new-diary-titleform{
+	height:40px;
+}/*日記の投稿画面のタイトル入力フォーム*/
+
+.new-diary-bodyform{
+	width:470px;
+	height:120px;
+}/*日記の投稿画面の内容入力フォーム*/
+
+.new-headline{
+	font-size:150%;
+	color:green;
+}/*日記の投稿画面の各フォームの見出し*/
+
+.new-head{
+	color:green;	
+}/*日記の投稿画面の各フォームの見出し*/
+
+.index-body{
+	background-image: image-url("diary2_index_image.jpg");
+	background-size: 100% 200%;
+	background-repeat: no-repeat;
+	opacity: 1;
+}/*My日記一覧のbody（ヘッダー除く）*/
+
+.index-content{
+	margin-top:100px;
+	margin-left:200px;
+}/*My日記一覧のbody（検索バー、ヘッダー除く）*/
+
+.dairy-all{
+	font-size:150%;
+	color:green;
+}/*My日記一覧の内容部分*/
+
+.index-all-body{
+	background-image: image-url("diary2_index_image.jpg");
+	background-size: 100% 200%;
+	background-repeat: no-repeat;
+	opacity: 1;
+}/*みんなの日記一覧のbody（ヘッダー除く）*/
+
+.index-all-content	{
+	margin-top:100px;
+	margin-left:200px;
+}/*みんなの日記一覧のbody（検索バー、ヘッダー除く）*/
+
+.all-dairy-all{
+	font-size:150%;
+	color:green;
+}/*みんなの日記一覧の内容部分*/
+
+.diary-show-body{
+    background-color:#CEF9DC;
+}/*日記詳細画面のbody（ヘッダー除く）*/
+
+.diary-show-content{
+	margin-top:100px;
+	margin-left:200px;
+}/*日記詳細画面のbody（検索バー、ヘッダー除く）*/
+
+.diary-comment{
+    margin-top:200px;
+    font-size:200%;
+}/*日記詳細画面のコメント入力フォーム、コメント一覧部分*/
+
+.diary-edit-body{
+	background-color:#CEF9DC;
+}/*日記編集画面のbody（ヘッダー除く）*/
+
+.diary-edit-content{
+	margin-top:150px;
+	margin-left:300px;
+}/*日記編集画面のbody（検索バー、ヘッダー除く）*/
+
+.diary-edit-headline{
+	font-size:150%;
+}/*日記編集画面入力フォームの各項目*/
+
+.diary-edit-title{
+	height:40px;
+}/*日記編集画面日記タイトル入力フォーム*/
+
+.diary-edit-diary-body{
+	background-color:white;
+	height:180px;
+	width:700px;
+}/*日記編集画面日記内容入力フォーム*/

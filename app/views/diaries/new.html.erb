@@ -1,23 +1,22 @@
-<div class="row">
-  <div class="col-sm-3">
-  	<h1>日記投稿画面</h1>
-		<%= form_for(@diary_new) do |f| %>
-		 
-		    <span>タイトル</span><br>
-		    <%= f.text_field :title %><br>
-		 
-		    <span>内容</span><br>
-		    <%= f.text_field :body %><br>
-		    
-		    <span>プロフィール画像</span><br>
-		    <%= attachment_image_tag @diary_new, :image, :fill, 60, 60, fallback: "no_image.jpg"%>
-		    <%= f.attachment_field :image %>
-		 
-		    <%= f.submit '投稿する' %>
-		 
-		<% end %>
+<body class ="new-body">
+  <div class="new-content">
+	<div class="row">
+	  <div class="col-sm-4">
+	  	<h1 class ="new-head">日記投稿画面</h1>
+			<%= form_for(@diary_new) do |f| %>			 
+			    <span class ="new-headline">タイトル</span><br>
+			    <%= f.text_field :title, class: "new-diary-titleform", size:60 %><br><br><br>			 
+			    <span class ="new-headline">内容</span><br>
+			    <%= f.text_area :body , class: "new-diary-bodyform", size:60 %><br><br><br>			    
+			    <span class ="new-headline">投稿画像</span><br>
+			    <%= attachment_image_tag @diary_new, :image, :fill, 60, 60, fallback: "no_image.jpg"%>
+			    <%= f.attachment_field :image %>			 
+			    <%= f.submit '投稿する' %>			 
+			<% end %>
+	  </div>
+	  <div class="col-sm-4">
+	    <%= render 'tasks/index', task: @task, tasks: @tasks %>
+	  </div>
+	</div>
   </div>
-  <div class="col-sm-4">
-    <%= render 'tasks/index', task: @task, tasks: @tasks %>
-  </div>
-</div>
+</body>

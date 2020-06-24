@@ -1,65 +1,50 @@
-<h1>目標詳細画面</h1>
+<body class ="goal-show-body">
+  <div class="goal-show-content">
+    <h1>目標詳細画面</h1>
+    <table class="table">
+      	<tr>
+      		<td>
+      			<%= link_to (@goal.user) do %>
+      			<%= attachment_image_tag(@goal.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %><br>
+      			<%= @goal.user.nickname %>
+      			<% end %>
+      		</td>
+      		<td class ="goal-show-table"><%= link_to @goal.title, @goal %></td>
+      		<td class ="goal-show-table"><%= @goal.body %></td>
+      		<td class ="goal-show-table">目標勉強時間：<%= @goal.set_time %>時間</td>
+      	<% if @goal.user == current_user %>
+      		<td><%= link_to "編集する",edit_goal_path(@goal), class: "btn-success btn-lg active" %></td>
+      		<td><%= link_to "削除する",@goal, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-danger btn-lg active" %></td>
+      	<% end %>
+      	</tr>
+    </table>
+    
 
-<table class="table">
-	<tr>
-		<td>
-			<%= link_to (@goal.user) do %>
-			<%= attachment_image_tag(@goal.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %><br>
-			<%= @goal.user.nickname %>
-			<% end %>
-		</td>
-		<td><%= link_to @goal.title, @goal %></td>
-		<td><%= @goal.body %></td>
-		<td>
-		  <span>目標設定時間</span><br>
-          <%= @goal.set_time %>
-        </td>
-	<% if @goal.user == current_user %>
-		<td><%= link_to "編集する",edit_goal_path(@goal), class: "btn-sm btn-success edit_book_#{@goal.id}" %></td>
-		<td><%= link_to "削除する",@goal, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_book_#{@goal.id}" %></td>
-	<% end %>
-	</tr>
-</table>
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>本日の勉強時間（単位：時間）</h2><br>
+        <%= form_for [@goal, @stack_new] do |f| %>
+          <%= f.number_field :study_time, step: '0.1', class:'input_form' %><strong>時間</strong>
+          <%= f.submit "登録する", class: "btn btn-lg btn-base-1 mt-20" %>
+        <% end %>    
+      </div>
+    </div><br><br><br>
+    <%= link_to "勉強時間一覧表示",goal_stacks_path(@goal), class: "btn-lg btn-success active" %>
+    <h2><%= @user.nickname %>さんの目標（<%= @goal.title %>）に対しての累計学習時間は<strong><%= @data.all.sum(:study_time) %></strong>時間です!!</h2>
+    <!--<%= line_chart @data.group_by_day(:created_at).sum(:study_time),min: 0, max: 15 %>-->
 
+    <%# {Sun, 14 Jun 2020=>4.2, Mon, 15 Jun 2020=>0, Tue, 16 Jun 2020=>2.4, Wed, 17 Jun 2020=>1.2} %>
+    <%# {Sun, 14 Jun 2020=>4.0, Mon, 15 Jun 2020=>4.0, Tue, 16 Jun 2020=>4.0, Wed, 17 Jun 2020=>4.0} %>
+    <div class ="graph-headline">日々の勉強時間の比較</div>
+      <%= line_chart [
+        { name: "毎日の勉強時間", data: @data.group_by_day(:created_at).sum(:study_time) },
+        { name: "目標設定時間", data: @goals },
+      ] ,height:"700px",colors: ["green", "red"]%>
 
-
-<div class="row">
-  <div class="col-sm-4">
-    <%= form_for [@goal, @stack_new] do |f| %>
-      <%= f.number_field :study_time, step: '0.1', class:'input_form' %>
-      <%= f.submit "登録する", class: "btn btn-lg btn-base-1 mt-20" %>
-    <% end %>    
+    <div class ="graph-headline">日々の勉強時間の比較</div>
+      <%= line_chart [
+        { name: "毎日の勉強時間の累計", data: @stydy_times },
+        { name: "目標勉強設定時間の累計", data: @set_times }
+      ],height:"700px",curve: false %>
   </div>
-
-  <div class="col-sm-1"></div>
-  <div class="col-sm-6">
-    <% @goal.stacks.each do |stack| %>   
-      <a href="#" class="link-author"><%= stack.user.nickname %></a>   
-      <span class="comment-date"><%= stack.created_at.strftime('%Y/%m/%d') %></span>
-      <span class="comment-entry"><%= stack.study_time %></span>
-      <span class="comment-entry"><%= stack.id %></span>
-      <%= link_to "編集する",edit_goal_stack_path(stack.goal.id,stack.id), class: "btn-sm btn-success" %>
-      <%= link_to "削除する",goal_stack_path(stack.goal.id,stack.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %>
-      <br>
-    <% end %>
-  </div>
-</div>
-<%= link_to "勉強時間一覧表示",goal_stacks_path(@goal), class: "btn-sm btn-success" %>
-<h2><%= @user.nickname %>さんの目標（<%= @goal.title %>）に対しての累計学習時間は<strong><%= @data.all.sum(:study_time) %></strong>時間です!!</h2><br><br>
-<!--<%= line_chart @data.group_by_day(:created_at).sum(:study_time),min: 0, max: 15 %>-->
-
-<%# {Sun, 14 Jun 2020=>4.2, Mon, 15 Jun 2020=>0, Tue, 16 Jun 2020=>2.4, Wed, 17 Jun 2020=>1.2} %>
-<%# {Sun, 14 Jun 2020=>4.0, Mon, 15 Jun 2020=>4.0, Tue, 16 Jun 2020=>4.0, Wed, 17 Jun 2020=>4.0} %>
-<div>日々の勉強時間の比較
-  <%= line_chart [
-    { name: "毎日の勉強時間", data: @data.group_by_day(:created_at).sum(:study_time) },
-    { name: "目標設定時間", data: @goals },
-  ] %>
-</div>
-
-<div>日々の勉強時間の比較
-  <%= line_chart [
-    { name: "毎日の勉強時間の累計", data: @stydy_times },
-    { name: "目標勉強設定時間の累計", data: @set_times }
-  ] %>
-</div>
+</body>

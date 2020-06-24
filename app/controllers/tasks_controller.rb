@@ -3,8 +3,9 @@ class TasksController < ApplicationController
     def create 
         @task = Task.new(task_params)
         @task.user_id = current_user.id
+        @user_current = current_user
+	    @tasks = @user_current.tasks
         @task.save
-	    redirect_to root_path
     end
 
 	def index
@@ -16,7 +17,9 @@ class TasksController < ApplicationController
 	def destroy
 		@task = Task.find(params[:id])
 	    @task.destroy
-	    redirect_to root_path
+	    @user_current = current_user
+	    @tasks = @user_current.tasks
+	    #redirect_to root_path
 	end
 
 	private #ストロングパラメータ
