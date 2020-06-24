@@ -1,35 +1,37 @@
-<h1>目標編集画面</h1>
-
-<%= form_for(@goal) do |f| %>
-      <div class='row'>
-        <div class='col-xs-2'>
-          <span class="c_h">タイトル</span>
-        </div>
-        <div class='col-xs-2'>
-         <%= f.text_field :title, autofocus: true, class: "", size:15 %>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col-xs-2'>
-          <span class="c_h">内容</span>
-        </div>
-        <div class='col-xs-2'>
-          <%= f.text_field :body, autofocus: true, class: "", size:15 %>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col-xs-2'>
-          <span>目標設定時間</span>
-        </div>
-        <div class='col-xs-2'>
-          <%= f.number_field :set_time, step: '0.1', class:'input_form' %>
-        </div>
-      </div>
-    <br> <!--改行による隙間-->
-      <div class='row'>
-        <div class='col-xs-2'></div>
-        <div class='col-xs-1'>
-          <%= f.submit "変更する",class: "btn btn-primary" %>
-        </div>
-      </div>
+<body class ="goal-edit-body">
+  <div class="goal-edit-content">
+    <h1>目標編集画面</h1><br><br>
+    <%= form_for(@goal) do |f| %>
+          <div class='row'>
+            <div class='col-xs-3'>
+              <span class="goal-edit-headline">タイトル</span>
+            </div>
+            <div class='col-xs-2'>
+             <%= f.text_field :title, autofocus: true, class: "goal-edit-title", size:15 %>
+            </div>
+          </div><br><br>
+          <div class='row'>
+            <div class='col-xs-3'>
+              <span class="goal-edit-headline">内容</span>
+            </div>
+            <div class='col-xs-2'>
+              <%= f.text_area :body, autofocus: true, class: "goal-edit-goal-body", size:15 %>
+            </div>
+          </div><br><br>
+          <div class='row'>
+            <div class='col-xs-3'>
+              <span class="goal-edit-headline">毎日の目標勉強時間（単位：時間）</span>
+            </div>
+            <div class='col-xs-2'>
+              <%= f.number_field :set_time, step: '0.1', class: "goal-edit-set_time" %><strong>時間</strong>
+            </div>
+          </div><br>
+          <div class='row'>
+            <div class='col-xs-8'></div>
+            <div class='col-xs-1'>
+              <%= f.submit "変更する",class: "btn btn-primary" %>
+            </div>
+          </div>
     <% end %>
+  </div>
+</body>

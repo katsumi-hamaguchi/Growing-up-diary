@@ -1,14 +1,27 @@
-<h1>目標一覧</h1>
-<% @goals.each do |goal| %>
-<tr>
-	<td>
-		<%= link_to(goal.user) do %>
-		<%= attachment_image_tag(goal.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %>
-		<% end %>
-	</td>
-	<td><%= @user.nickname %></td>
-	<td><%= goal.title %></td>
-	<td><%= link_to "詳細", goal_path(goal.id),class: "btn btn-primary" %></td>
-	<br>
-  </tr>
-<% end %>
+<body class ="goal-index-body">
+  <div class="goal-index-content">
+		<div class="row">
+		  <div class="col-sm-6">
+			<h1>目標一覧(表示件数<%= @goals.count %>件）</h1>
+			<div class ="all-goal">
+				<% @goals.each do |goal| %>
+				<tr>
+					<td>
+						<%= link_to(goal.user) do %>
+						<%= attachment_image_tag(goal.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %>
+						<% end %>
+					</td>
+					<td><%= @user.nickname %></td>
+					<td><%= goal.title %></td>
+					<td><%= link_to "詳細", goal_path(goal.id),class: "btn btn-primary btn-lg active" %></td>
+					<br>
+				  </tr>
+				<% end %>
+		    </div>
+		  </div>
+		  <div class="col-sm-6">
+		    <%= render 'tasks/index', task: @task, tasks: @tasks %>
+		  </div>
+		</div>
+  </div>
+</body>

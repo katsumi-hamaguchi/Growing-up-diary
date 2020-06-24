@@ -1,18 +1,11 @@
-<h1>タスクリスト</h1>
-<div>
-<%= form_for(@task) do |f| %>
-  <span>タスク内容</span><br>
-  <%= f.text_field :body %>
-  <%= f.submit '追加する' %>
-<% end %>
-</div>
+
 <span>タスク一覧</span>
 <br>
 
 <% @tasks.each do |task| %>
 <tr>
 	<td><%= task.body %></td>
-	<td><%= link_to "タスク消化",task, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger #{task.id}" %></td>
+	<td><%= link_to "タスク消化",task_path(task), method: :delete, remote: true, class: "btn-sm btn-danger" %></td>
 	<br>
 </tr>
 <% end %>

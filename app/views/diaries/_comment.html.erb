@@ -1,0 +1,12 @@
+<h2>コメント一覧</h2>
+    <% @diary.diary_comments.each do |diary_comment| %>
+	    <div class ="diary_comments">   
+	      <a href="#" class="link-author"><%= diary_comment.user.nickname %></a>   
+	      <span class="comment-date"><%= diary_comment.created_at.strftime('%Y/%m/%d') %></span>
+	      <span class="comment-entry"><%= diary_comment.comment %></span>
+	      <% unless current_user != diary_comment.user %>
+			<%= link_to "削除",  diary_diary_comment_path(@diary.id,diary_comment), method: :delete, remote: true %>
+		<% end %>
+	      <br>
+	    </div>
+    <% end %>
