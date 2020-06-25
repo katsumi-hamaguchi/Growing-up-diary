@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Devise::SessionsController < Devise::SessionsController
+class Users::SessionsController < Devise::SessionsController
   before_action :reject_user, only: [:create]
 
   protected
