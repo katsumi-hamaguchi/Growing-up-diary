@@ -1,0 +1,101 @@
+// Place all the styles related to the Goals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.goal-new-body{
+	background-image: image-url("goal2_image.jpg");
+	background-size: 100% 180%;
+	background-repeat: no-repeat;
+	opacity: 1;
+}/*目標新規作成画面のbody*/
+
+.goal-new-content{
+    margin-top:200px;
+	margin-left:200px;
+}/*目標新規作成画面のbody（ヘッダー除く）*/
+
+.goal-new-headline{
+	font-size:150%;
+}/*目標新規作成画面入力フォーム各項目*/
+
+.goal-new-title{
+	height:40px;
+} /*目標新規作成画面のタイトル入力フォーム部分*/
+
+.goal-new-goal-body{
+	height:180px;
+	width:700px;
+} /*目標新規作成画面の内容入力フォーム部分*/
+
+.goal-new-set{
+	height:40px;
+} /*目標新規作成画面の目標時間入力フォーム部分*/
+
+.new-set_time{
+	font-size:150%;
+}/*目標新規作成画面の目標時間入力フォームの横の時間部分*/
+
+.goal-new-btn{
+	font-size:150%;
+}/*目標新規作成画面の登録ボタン部分*/
+
+.goal-index-body{
+	background-image: image-url("goal2_image.jpg");
+	background-size: 100% 250%;
+	background-repeat: no-repeat;
+	opacity: 1;
+}/*登録目標一覧画面のbody*/
+
+.goal-index-content{
+	margin-top:100px;
+	margin-left:400px;
+}/*登録目標一覧画面のbody（ヘッダー除く）*/
+
+.all-goal{
+	margin-top:50px;
+    font-size:200%;
+}/*登録目標一覧画面の一覧内容部分*/
+
+.goal-edit-body{
+	background-color:#CEF9DC;
+}/*登録目標編集画面のbody*/
+
+.goal-edit-content{
+	margin-top:100px;
+	margin-left:400px;
+}/*登録目標編集画面のbody（ヘッダー除く）*/
+
+.goal-edit-title{
+	height:40px;
+}/*登録目標編集画面タイトル入力フォーム*/
+
+.goal-edit-goal-body{
+	height:180px;
+	width:700px;
+}/*登録目標編集画面内容入力フォーム*/
+
+.goal-edit-set_time{
+	height:40px;
+}/*登録目標編集画面の目標設定時間入力フォーム*/
+
+.goal-edit-headline{
+	font-size:150%;
+}/*登録目標編集画面入力フォームの各項目*/
+
+.graph-headline{
+	font-size:250%;
+	margin-top:150px;
+	margin-bottom:30px;
+	color:green;
+}/*登録目標詳細画面の目標グラフの各項目*/
+
+.goal-show-body{
+	background-image: image-url("goal_image.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	opacity: 1;
+}/*登録目標詳細画面のbody*/
+
+.goal-show-table{
+	font-size:200%;
+}/*登録目標詳細画面の目標詳細*/

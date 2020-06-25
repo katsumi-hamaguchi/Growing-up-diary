@@ -1,0 +1,95 @@
+<body class ="edit-body">
+  <div class="edit-content">
+  <h1><strong>マイページ編集画面</strong></h1>     
+      <%= form_for(@user) do |f| %>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span class="c_h">名前</span>
+          </div>
+          <div class='col-xs-2'>
+           （性）<%= f.text_field :last_name, autofocus: true, class: "user-edit-name", size:15 %>
+          </div>
+          <div class='col-xs-2'>
+           （名）<%= f.text_field :first_name, autofocus: true, class: "user-edit-name", size:15 %>
+          </div>
+        </div><br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span class="c_h">フリガナ</span>
+          </div>
+          <div class='col-xs-2'>
+           （セイ）<%= f.text_field :last_name_kana, autofocus: true, class: "form-user-edit", size:15 %>
+          </div>
+          <div class='col-xs-2'>
+           （メイ）<%= f.text_field :first_name_kana, autofocus: true, class: "form-user-edit", size:15 %>
+          </div>
+        </div><br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span class="c_h">ニックネーム</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.text_field :nickname, autofocus: true, class: "user-edit-form", size:15 %>
+          </div>
+        </div><br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span class="c_h">メールアドレス</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.email_field :email, autofocus: true, class: "user-edit-form", size:15 %>
+          </div>
+        </div><br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span class="c_h">郵便番号</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.text_field :postcode, autofocus: true, class: "user-edit-form", size:15  %>
+          </div>
+        </div><br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span>都道府県</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name %>
+          </div>
+        </div><br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span>町名</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.text_field :address_city, autofocus: true, class: "user-edit-form", id:"address_city" %>   
+          </div>
+        </div><br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span>住所</span>
+          </div>
+          <div class='col-xs-4'>
+            <%= f.text_field :address, autofocus: true,  class: "user-edit-form", size: 69%>
+          </div>
+        </div><br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span>プロフィール画像</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+          <%= f.attachment_field :profile_image %>
+          </div>
+        </div><br>
+      <br> 
+        <div class='row'>
+          <div class='col-xs-2'></div>
+          <div class='col-xs-1'>
+            <%= f.submit "変更する",class: "btn btn-primary" %>
+          </div>
+            <%= link_to ' 退会する', withdrawal_path(current_user.id),class: "btn btn-danger" %>
+            <%= link_to "パスワードを変更する", change_pass_path(current_user.id),class: "btn btn-primary" %>
+        </div>
+      <% end %>
+  </div>
+</body>

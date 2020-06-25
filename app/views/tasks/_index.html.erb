@@ -1,0 +1,11 @@
+
+<span>タスク一覧</span>
+<br>
+
+<% @tasks.each do |task| %>
+<tr>
+	<td><%= task.body %></td>
+	<td><%= link_to "タスク消化",task_path(task), method: :delete, remote: true, class: "btn-sm btn-danger" %></td>
+	<br>
+</tr>
+<% end %>

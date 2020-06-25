@@ -1,0 +1,30 @@
+<body class="event-body">
+  <h1><strong><%= @user.nickname %></strong>さんのスケジュール</h1>
+  <div class='row'>
+    <div class='col-xs-8'>
+      <div id="calendar"></div>
+      <%= link_to 'スケジュール追加', events_path(current_user.id) ,class: "event-btn"%>
+    </div>
+    <div class ="event-back">
+      <div class='col-xs-4'>
+        <span class ="event-headline"><strong><%= @user.nickname %></strong>さんの記録</span>
+        <span><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "80x80" %></span>
+      </div>
+      <div class='col-xs-4'>
+      	<div class ="event-title">通算勉強時間登録回数</div>
+      	<div class ="event-content"><%= @user.stacks.count %>回！</div><br>
+        <div class ="event-title">累計日記数</div>
+        <div class ="event-content"><%= @user.diaries.count %>回投稿！</div><br>
+      </div>
+      <div class='col-xs-4'>
+      	<div class ="event-title">目標タイトル一覧</div>
+        <div class ="event-goal-content">
+        <% @user.goals.each do |user| %>
+        <%=user.title %>
+        <%= link_to "詳細を確認する", goal_path(user.id),class: "btn btn-primary" %><br>
+        <% end %>
+        </div>
+      </div>
+      </div>
+  </div>
+</body>
