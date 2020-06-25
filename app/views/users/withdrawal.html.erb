@@ -1,0 +1,13 @@
+<body class="withdrawal-body">
+	<div class="withdrawal-content">
+	  <h1><strong>本当に退会しますか？</strong></h1>
+	    <br>
+		  <p class ="withdrawal-contents">退会すると、これまでの投稿した日記の編集や、目標設定の達成状況などを閲覧する事が出来なくなります。</p><br>
+		  <p class ="withdrawal-contents">退会する場合は、「退会する」をクリックしてください。</p>
+		<br>
+		  <p><%= link_to '退会しない', user_path(current_user.id),class: "btn btn-primary" %>
+		   &nbsp;&nbsp;
+		     <%= link_to "退会する", retire_path(current_user.id), method: :put, "data-confirm" => "本当に退会しますか？",class: "btn btn-danger" %>
+		  </p>
+    </div>
+</body>

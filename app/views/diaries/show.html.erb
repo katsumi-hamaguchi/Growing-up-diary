@@ -1,0 +1,39 @@
+<body class ="diary-show-body">
+  <div class="diary-show-content">
+	<h1>日記詳細</h1>
+	<table class="table">
+		<tr>
+			<td>
+				<%= link_to (@diary.user) do %>
+				<%= attachment_image_tag(@diary.user, :profile_image, fallback: "no_image.jpg", size: "100x100") %><br>
+				<%= @diary.user.nickname %>
+				<% end %>
+			</td>
+			<td><%= link_to @diary.title, @diary %></td>
+			<td><%= @diary.body %></td>
+			<td><%= attachment_image_tag(@diary, :image, fallback: "no_image.jpg", size: "100x100") %></td>
+		<% if @diary.user == current_user %>
+			<td><%= link_to "編集する",edit_diary_path(@diary), class: "btn-sm btn-success edit_book_#{@diary.id}" %></td>
+			<td><%= link_to "削除する",@diary, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_book_#{@diary.id}" %></td>
+		<% end %>
+		</tr>
+	</table>
+    <div class="diary-comment">
+		<div class="row">
+		  <div class="col-sm-4">
+		  	<h2>コメント入力フォーム</h2>
+		    <%= form_with(model: [@diary, @diary_comment], remote:true ) do |f| %>
+		      <%= f.text_area :comment, rows:'6', class: "form-control",placeholder: "コメントをここに" %>
+		      <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20" %>
+		    <% end %>
+		  </div>
+		  <div class="col-sm-1"></div>
+		  <div class="col-sm-6">
+		  	<h1>Myタスクリスト</h1>
+          <div>
+		    <div id="comments"><%= render 'diaries/comment', diary_comments: @diary.diary_comments %></div>
+		  </div>
+		</div>
+    </div>
+  </div>
+</body>

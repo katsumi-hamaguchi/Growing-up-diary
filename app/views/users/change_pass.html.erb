@@ -1,0 +1,45 @@
+<body class ="change-pass-body">
+  <div class ="change-pass-content">
+    <span class="change-pass-headline">パスワード変更</span>
+    <div class="change-pass-small-headline"><strong>変更のために現在のパスワードを入力してください。</strong></div>
+    <br><br>
+      <%= form_with(model: current_user, url: change_path, method: :put, local: true) do |f| %>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span class="change-pass-item">変更後のパスワード</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.password_field :password, autocomplete: "new-password", size:60,class: "change-pass-form" %>
+          </div>
+        </div>
+      <br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span class="change-pass-item">変更後のパスワード(確認用)</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", size:60, class: "change-pass-form" %>
+          </div>
+        </div>
+      <br>
+        <div class='row'>
+          <div class='col-xs-2'>
+            <span class= "change-pass-item">現在のパスワード</span>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.password_field :current_password, autocomplete: "current-password",size:60, class: "change-pass-form" %>
+          </div>     
+        </div>
+      <br><br>
+        <div class='row'>
+          <div class='col-xs-1'></div>
+          <div class='col-xs-3'>
+            <%= link_to'キャンセル', user_path(current_user.id) ,class: "btn btn-primary" %>
+          </div>
+          <div class='col-xs-2'>
+            <%= f.submit "変更する",class: "btn btn-danger" %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</body>

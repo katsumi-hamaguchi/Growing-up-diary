@@ -1,0 +1,29 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search-body{
+	background-color:#CEF9DC;
+}/*my日記検索結果画面のbody*/
+
+.search-content{
+	margin-top:100px;
+	margin-left:400px;
+}/*my日記検索結果画面のbody（ヘッダー除く）*/
+
+.all-search{
+	font-size:150%;
+}/*my日記検索結果画面の内容*/
+
+.search-all-body{
+	background-color:#CEF9DC;
+}/*みんなの日記検索結果画面のbody*/
+
+.search-all-content{
+	margin-top:100px;
+	margin-left:400px;
+}/*みんなの日記検索結果画面のbody（ヘッダー除く）*/
+
+.all-search-all{
+	font-size:150%;
+}/*みんなの日記検索結果画面の内容*/
