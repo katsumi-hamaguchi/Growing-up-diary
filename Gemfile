@@ -71,3 +71,8 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem "chartkick"
 gem 'groupdate'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
