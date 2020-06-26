@@ -52,7 +52,7 @@
 
 .show-goal{
 	font-size:250%;
-}/*ユーザーマイページの設定目標の内容部分*/
+}/*ユーザーマイページの設定目標の内容部分、項目部分*/
 
 .edit-body{
 	background-color:#CEF9DC;
@@ -117,3 +117,15 @@
  .change-pass-item{
  font-size:150%;
  } /*ユーザーパスワード変更画面の入力フォームの項目部分*/
+
+ .followers-body{
+	background-color:#CEF9DC;
+}/*フォロワーの一覧表示のbody全体*/
+
+.following-body{
+	background-color:#CEF9DC;
+}/*フォロー中の一覧表示のbody全体*/
+
+.follow_tbody{
+	font-size:180%;
+}/*フォロー中、フォロワー一覧の対象ユーザーの内容部*/

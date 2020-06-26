@@ -21,7 +21,7 @@
         <div class ="event-goal-content">
         <% @user.goals.each do |user| %>
         <%=user.title %>
-        <%= link_to "詳細を確認する", goal_path(user.id),class: "btn btn-primary" %><br>
+        <%= link_to "詳細を確認する", goal_path(user.id),class: "btn btn-primary btn-lg active" %><br>
         <% end %>
         </div>
       </div>

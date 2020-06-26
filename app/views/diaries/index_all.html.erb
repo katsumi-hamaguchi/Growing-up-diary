@@ -7,7 +7,7 @@
 	<% end %>
 	<div class="index-all-content">
 		<div class='row'>
-		  <div class='col-xs-6'>
+		  <div class='col-xs-5'>
 		    <h1>みんなの投稿日記</h1>
 		    <div class ="all-dairy-all">
 			<% @diaries.each do |diary| %>
@@ -19,7 +19,7 @@
 					</td>
 					<td><%= diary.user.nickname %></td>
 					<td><%= diary.title %></td>
-					<td><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary" %></td>
+					<td><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary btn-lg active" %></td>
 					<% if diary.favorited_by?(current_user) %>
 						<td>
 						    <%= link_to diary_favorites_path(diary), method: :delete do %>
@@ -41,7 +41,15 @@
 		    </div>
 		   </div>
 		   <div class='col-xs-6'>
-		     <%= render 'tasks/index', task: @task, tasks: @tasks %>
+		   	<%if current_user == @user %>
+	        <h1>Myタスクリスト</h1>
+	        <%= form_with(model:@task, remote:true ) do |f| %>
+	          <span>タスク内容</span><br>
+	          <%= f.text_field :body %>
+	          <%= f.submit '追加する' %>
+	        <% end %>
+		    <div id="tasks"><%= render 'tasks/index', task: @task, tasks: @tasks %></div>
+		    <% end %>
 		   </div>
 		</div>
     </div>

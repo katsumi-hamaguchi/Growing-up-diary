@@ -1,24 +1,28 @@
-<h2>フォロー中</h2>
-<div>表示人数：<%= @user.followers.count %>人</div>
-<table class="table">
-	<thead>
-		<tr>
-			<th>プロフィール画像</th>
-			<th>ニックネーム</th>
-			<th colspan="3"></th>
-		</tr>
-	</thead>
+<body class="following-body">
+	<h2>フォロー中（人数：<%= @user.followers.count %>人）</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>プロフィール画像</th>
+				<th>ニックネーム</th>
+				<th>フォロワー数</th>
+				<th>フォロー数</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
 
-	<tbody>
-		<% @users.each do |user| %>
-		<tr>
-			<td><%= attachment_image_tag(user, :profile_image, fallback: "no_image.jpg", size: "60x60") %></td>
-			<td><%= user.nickname%></td>
-			<td>フォロワー数:<%= user.followers.count %></td>
-			<td>フォロー数:<%= user.followings.count %></td>
-			<td><%= render "relationships/follow_button", user: user %></td>
-			<td><%= link_to "Show", user, class: "user_#{user.id}" %></td>		
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= attachment_image_tag(user, :profile_image, fallback: "no_image.jpg", size: "60x60") %></td>
+				<td class ="follow_tbody"><%= user.nickname%></td>
+				<td class ="follow_tbody">フォロワー数:<%= user.followers.count %></td>
+				<td class ="follow_tbody">フォロー数:<%= user.followings.count %></td>
+				<td><%= render "relationships/follow_button", user: user %></td>
+				<td><%= link_to "詳細", user, class: "btn btn-primary btn-lg active btn-block" %></td>		
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</body>
