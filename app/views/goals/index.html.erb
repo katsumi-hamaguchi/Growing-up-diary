@@ -20,7 +20,15 @@
 		    </div>
 		  </div>
 		  <div class="col-sm-6">
-		    <%= render 'tasks/index', task: @task, tasks: @tasks %>
+		  	<%if current_user == @user %>
+	        <h1>Myタスクリスト</h1>
+	        <%= form_with(model:@task, remote:true ) do |f| %>
+	          <span>タスク内容</span><br>
+	          <%= f.text_field :body %>
+	          <%= f.submit '追加する' %>
+	        <% end %>
+		    <div id="tasks"><%= render 'tasks/index', task: @task, tasks: @tasks %></div>
+		    <% end %>
 		  </div>
 		</div>
   </div>

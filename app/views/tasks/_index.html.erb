@@ -1,11 +1,16 @@
-
-<span>タスク一覧</span>
-<br>
-
-<% @tasks.each do |task| %>
-<tr>
-	<td><%= task.body %></td>
-	<td><%= link_to "タスク消化",task_path(task), method: :delete, remote: true, class: "btn-sm btn-danger" %></td>
-	<br>
-</tr>
-<% end %>
+<table class ="table">
+	<thead>
+		<tr>
+			<th class ="task-headline">タスク内容</th>
+			<th class ="task-headline">残り<%= @tasks.count %>件</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @tasks.each do |task| %>
+		<tr>
+			<td class ="task-content"><%= task.body %></td>
+			<td class ="task-btn"><%= link_to "タスク消化",task_path(task), method: :delete, remote: true, class: "btn-sm btn-danger btn-lg active btn-block " %></td>
+		</tr>
+		<% end %>
+    </tbody>
+</table>
