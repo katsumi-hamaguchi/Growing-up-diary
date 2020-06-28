@@ -4,9 +4,24 @@
 
 .stack-body{
 	background-color:#CEF9DC;
-}/*my日記検索結果画面のbody*/
+}/*勉強時間一覧画面のbody*/
 
 .stack-content{
 	margin-top:100px;
-	margin-left:400px;
-}/*my日記検索結果画面のbody（ヘッダー除く）*/
+}/*勉強時間一覧画面のbody（ヘッダー除く）*/
+
+.stack-headline{
+
+}/*勉強時間一覧画面のテーブル見出し*/
+
+.stack-tbody{
+	font-size:180%;
+}/*勉強時間一覧画面のテーブル内容*/
+
+.stack-edit-body{
+	background-color:#CEF9DC;
+}/*勉強時間編集画面のbody*/
+
+.stack-edit-content{
+	margin-top:100px;
+}/*勉強時間編集画面のbody（ヘッダー除く）*/

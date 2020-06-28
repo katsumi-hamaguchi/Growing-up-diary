@@ -10,7 +10,7 @@ class DiariesController < ApplicationController
 	    @diary_new = Diary.new(diary_params)
 	    @diary_new.user_id = current_user.id
 	    @diary_new.save
-	    redirect_to root_path	
+	    redirect_to diaries_path(current_user.id)	
 	end
 
 	def index
@@ -33,7 +33,7 @@ class DiariesController < ApplicationController
 		@diary = Diary.find(params[:id])
 	    if @diary.update(diary_params)
 	       flash[:notice] = "日記の編集が完了しました"  
-           redirect_to root_path
+           redirect_to diary_path(@diary)
         else
            flash[:notice] = "もう一度ご確認の上、ご入力お願いします。" 
            render "edit"
@@ -43,7 +43,7 @@ class DiariesController < ApplicationController
 	def destroy
 	    @diary = Diary.find(params[:id])
 	    @diary.destroy
-	    redirect_to root_path		
+	    redirect_to diaries_path(current_user.id)		
 	end
 
 	def index_all
@@ -54,16 +54,8 @@ class DiariesController < ApplicationController
 	    @task = Task.new	
 	end
 
-	def search		
-	end
 
-	def search_all		
-	end
-
-	def update_release		
-	end
-
-	private #ストロングパラメータ
+	private 
     def diary_params
       params.require(:diary).permit(:title, :body, :image)
     end

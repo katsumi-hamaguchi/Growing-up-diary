@@ -31,12 +31,21 @@
 <div class="nn">
 <div class="row">
   
+  <% if user_signed_in? %>
+  <div class="col-sm-6">
+    <%= link_to 'マイページへ移動する', user_path(current_user.id) %>
+  </div>
+  <div class="col-sm-6">
+    <%= link_to 'スケジュールを確認する', event_user_path(current_user.id) %>
+  </div>
+  <% else %>
   <div class="col-sm-6">
     <%= link_to '新規登録', new_user_registration_path %>
   </div>
   <div class="col-sm-6">
     <%= link_to 'ログイン', new_user_session_path %>
   </div>
+  <% end %>
 </div>
 </div>
 </body>

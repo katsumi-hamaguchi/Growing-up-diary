@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<body class ="event-index-body">
+  <div class="event-index-content">
+    <h1>予定の一覧（表示件数：<%= @events.count %>件）</h1>
 
-<h1>Events</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>開始予定</th>
+          <th>終了予定</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Start</th>
-      <th>End</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @events.each do |event| %>
+          <tr>
+            <td class ="event_tbody"><%= event.title %></td>
+            <td class ="event_tbody"><%= event.start %></td>
+            <td class ="event_tbody"><%= event.end %></td>
+            <td><%= link_to '詳細を見る', event,class: "btn btn-primary btn-lg active" %></td>
+            <td><%= link_to '編集する', edit_event_path(event),class: "btn btn-primary btn-lg active" %></td>
+            <td><%= link_to '削除する', event, method: :delete, data: { confirm: '本当に削除しますか？' },class: "btn btn-danger btn-lg active" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.body %></td>
-        <td><%= event.start %></td>
-        <td><%= event.end %></td>
-        <td><%= event.user_id %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <br>
 
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+    <%= link_to '予定の追加ページへ移動する', new_event_path,class: "btn btn-primary btn-lg active" %>

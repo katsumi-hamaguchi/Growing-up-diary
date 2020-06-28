@@ -1,5 +1,22 @@
-<h1>New Event</h1>
-
-<%= render 'form', event: @event %>
-
-<%= link_to 'Back', events_path %>
+<body class ="event-new-body">
+  <div class="event-new-content">
+  	<div class="row">
+	  <div class="col-sm-6">
+		<h1>予定の追加</h1>
+		<%= render 'form', event: @event %>
+		<%= link_to '予定一覧ページに戻る', events_path %>
+	  </div>
+	  <div class="col-sm-6"> 
+	    <%if current_user == @user %>
+        <h1>Myタスクリスト</h1>
+        <%= form_with(model:@task, remote:true ) do |f| %>
+          <span>タスク内容</span><br>
+          <%= f.text_field :body, size:34 %>
+          <%= f.submit '追加する' %>
+        <% end %>  
+	    <div id="tasks"><%= render 'tasks/index', task: @task, tasks: @tasks %></div>
+	    <% end %>
+	  </div>
+    </div>
+  </div>
+</body>

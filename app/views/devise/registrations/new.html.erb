@@ -52,23 +52,9 @@
         </div>
       </div><br>
 
-     <div class='row'>
-        <div class='col-xs-2'>
-          <span>都道府県</span>
-        </div>
-        <div class='col-xs-4'>
-          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, class: "form-sign-up"  %>
-        </div>
-     </div><br>
+     
 
-     <div class='row'>
-        <div class='col-xs-2'>
-          <span>町名</span>
-        </div>
-        <div class='col-xs-4'>
-          <%= f.text_field :address_city, autofocus: true, class: "form-sign-up", id:"address_city" %>   
-        </div>
-      </div><br>
+     
 
       <div class='row'>
         <div class='col-xs-2'>
@@ -97,8 +83,11 @@
       </div><br>
 
       <span class="sign_btn">
-        <%= f.submit "新規登録",class: "btn btn-primary" %>
+        <%= f.submit "新規登録",class: "btn btn-primary btn-lg active" %>
       </span>
+      <div class= "sign_nodisplay">
+      <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, class: "h_sign_n"  %>
+      </div><!--画面では非表示にしているが、都道府県のコード番号を名前に変更する役割を果たしている-->
     <% end %>
   <br><br>
     <span class="sign-headline">既に登録済みの方</span><br>

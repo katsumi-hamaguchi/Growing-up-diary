@@ -33,9 +33,8 @@
 }/*日記の投稿画面の各フォームの見出し*/
 
 .index-body{
-	background-image: image-url("diary2_index_image.jpg");
-	background-size: 100% 200%;
-	background-repeat: no-repeat;
+	background-image: image-url("goal2_image.jpg");
+	background-size: 100% 1600px;
 	opacity: 1;
 }/*My日記一覧のbody（ヘッダー除く）*/
 
@@ -50,9 +49,8 @@
 }/*My日記一覧の内容部分*/
 
 .index-all-body{
-	background-image: image-url("diary2_index_image.jpg");
-	background-size: 100% 200%;
-	background-repeat: no-repeat;
+	background-image: image-url("goal2_image.jpg");
+	background-size: 100% 1600px;
 	opacity: 1;
 }/*みんなの日記一覧のbody（ヘッダー除く）*/
 
@@ -72,8 +70,11 @@
 
 .diary-show-content{
 	margin-top:100px;
-	margin-left:200px;
 }/*日記詳細画面のbody（検索バー、ヘッダー除く）*/
+
+.diary_show_tbody{
+	font-size:180%;
+}/*日記詳細画面のテーブル内容*/
 
 .diary-comment{
     margin-top:200px;

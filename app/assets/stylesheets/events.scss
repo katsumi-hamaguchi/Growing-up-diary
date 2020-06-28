@@ -1,3 +1,62 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-new-body{
+	background-image: image-url("goal2_image.jpg");
+	background-size: 100% 1600px;
+	background-repeat: no-repeat;
+	opacity: 1;
+}/*予定の追加画面のbody*/
+
+.event-new-content{
+    margin-top:200px;
+	margin-left:200px;
+}/*予定の追加画面のbody（ヘッダー除く）*/
+
+.event-new-headline{
+	font-size:150%;
+}/*予定の追加画面入力フォーム各項目*/
+
+.event-new-title{
+	height:80px;
+	width:300px;
+} /*予定の追加画面のタイトル入力フォーム部分*/
+
+.event-index-body{
+	background-color:#CEF9DC;
+}/*予定の一覧画面のbody*/
+
+.event-index-content{
+	margin-top:200px;
+	margin-left:200px;
+}/*予定の一覧画面のbody（ヘッダー除く）*/
+
+.event_tbody{
+	font-size:150%;
+}
+
+.event-edit-body{
+	background-image: image-url("goal2_image.jpg");
+	background-size: 100% 180%;
+	background-repeat: no-repeat;
+	opacity: 1;
+}/*予定の編集画面のbody*/
+
+.event-edit-content{
+    margin-top:200px;
+	margin-left:200px;
+}/*予定の編集画面のbody（ヘッダー除く）*/
+
+.event-show-body{
+	background-color:#CEF9DC;
+}/*予定の詳細画面のbody*/
+
+.event-show-content{
+    margin-top:200px;
+	margin-left:400px;
+}/*予定の詳細画面のbody（ヘッダー除く）*/
+
+.events-show{
+	font-size:200%;
+}

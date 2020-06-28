@@ -3,7 +3,8 @@
   <div class='row'>
     <div class='col-xs-8'>
       <div id="calendar"></div>
-      <%= link_to 'スケジュール追加', events_path(current_user.id) ,class: "event-btn"%>
+      <%= link_to 'スケジュール追加', new_event_path(current_user.id) ,class: "event-btn"%><br>
+      <%= link_to 'スケジュール一覧', events_path(current_user.id) ,class: "event-btn"%>
     </div>
     <div class ="event-back">
       <div class='col-xs-4'>
