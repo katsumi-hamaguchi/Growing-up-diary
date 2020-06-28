@@ -24,22 +24,7 @@
 					</td>
 					<td><%= diary.title %></td>
 					<td><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary btn-lg active" %></td>
-					<% if diary.favorited_by?(current_user) %>
-						<td>
-						    <%= link_to diary_favorites_path(diary), method: :delete do %>
-						    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-						    <%= diary.favorites.count %> いいね
-						    <% end %>
-						</td>
-						<% else %>
-						<td>
-						    <%= link_to diary_favorites_path(diary), method: :post do %>
-						    <i class="fa fa-heart-o" aria-hidden="true"></i>
-						    <%= diary.favorites.count %> いいね
-						    <% end %>
-						</td>
-					<% end %>
-					<br>
+					<div id="favorites-<%= diary.id %>"><%= render 'users/favorite', diary: diary %></div>
 				</tr>
 			<% end %>
 		    </div>
