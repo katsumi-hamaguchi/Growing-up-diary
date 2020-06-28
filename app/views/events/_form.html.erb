@@ -12,31 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <span class="event-new-headline">予定のタイトル</span><br>
+    <%= form.text_field :title, size:36 %>
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+    <span class="event-new-headline">予定の詳細</span><br>
+    <%= form.text_area :body, class: "event-new-title" %>
   </div>
 
   <div class="field">
-    <%= form.label :start %>
+    <span class="event-new-headline">開始予定日</span><br>
     <%= form.datetime_select :start %>
   </div>
 
   <div class="field">
-    <%= form.label :end %>
+    <span class="event-new-headline">終了予定日</span><br>
     <%= form.datetime_select :end %>
   </div>
 
-  <!--<div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>-->
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "登録する" %>
   </div>
 <% end %>

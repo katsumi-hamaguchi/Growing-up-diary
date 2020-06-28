@@ -3,7 +3,7 @@
 	  <%= text_field_tag :search %>
 	  <%= select_tag(:option, options_for_select([["日記タイトル", "1"],["ニックネーム","2"]]))%> 
 	  <%= select_tag(:choice, options_for_select([["完全一致検索", "1" ],["前方一致検索", "2" ],["後方一致検索", "3" ],["部分一致検索","4"]]))%>
-	<%= submit_tag 'Search' %>
+	<%= submit_tag '検索する' %>
 	<% end %>
 	<div class="index-all-content">
 		<div class='row'>
@@ -17,7 +17,11 @@
 						<%= attachment_image_tag(diary.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %>
 						<% end %>
 					</td>
-					<td><%= diary.user.nickname %></td>
+					<td>
+						<%= link_to(diary.user) do %>
+						<%= diary.user.nickname %>
+						<% end %>	
+					</td>
 					<td><%= diary.title %></td>
 					<td><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary btn-lg active" %></td>
 					<% if diary.favorited_by?(current_user) %>

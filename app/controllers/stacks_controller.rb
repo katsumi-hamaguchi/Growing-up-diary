@@ -5,7 +5,7 @@ class StacksController < ApplicationController
 		stack.user_id = current_user.id
 		stack.goal_id = goal.id
 		stack.save
-	    redirect_to root_path		
+	    redirect_to goal_path(goal.id)		
 	end
 
 	def index
@@ -14,21 +14,20 @@ class StacksController < ApplicationController
 		@goal = Goal.find(params[:goal_id])
 	end
 
-	def show
-		@stack = Stack.find(params[:id])
-	end
-
 	def edit
 		@goal = Goal.find(params[:goal_id])
 		#@stack = Stack.find(params[:id])
 		@stack = Stack.find_by(id: params[:id], goal_id: params[:goal_id])
+		@user = current_user
+	    @tasks = @user.tasks
+	    @task = Task.new
 	end
 
 	def update
 		@stack = Stack.find(params[:id])
 	    if @stack.update(stack_params)
 	       flash[:notice] = "目標設定の編集が完了しました"  
-           redirect_to root_path
+           redirect_to goal_stacks_path
         else
            flash[:notice] = "もう一度ご確認の上、ご入力お願いします。" 
            render "edit"
@@ -39,7 +38,7 @@ class StacksController < ApplicationController
 		stack = Stack.find(params[:id])
 		#stack = Stack.find_by(id: params[:id], goal_id: params[:goal_id])
 		stack.destroy
-        redirect_to root_path
+        redirect_to goal_stacks_path
 	end
 
 	private

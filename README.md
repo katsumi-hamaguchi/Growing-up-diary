@@ -52,7 +52,8 @@ https://docs.google.com/spreadsheets/d/10qgWWXfqsdCreb1ldWEAhgRUh9jJRDVY72RyEGKb
 https://docs.google.com/spreadsheets/d/1URUys4_6iPsqVaQ4B3tgQ_hFsjfDQAV1HsC-R45Woao/edit#gid=0
 
 
-テスト仕様書（作成次第、リンク貼り付け）
+テスト仕様書（随時更新）
+https://docs.google.com/spreadsheets/d/1H4f3jsRXt37jQsmv25i5OGkhI3fgcIva/edit#gid=562715791
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1EuKVUJep4hLsCQZZ0rS8y1J-YCiMJEfGFkBOCX_ZLsc/edit#gid=0

@@ -2,6 +2,17 @@
   <div class="diary-show-content">
 	<h1>日記詳細</h1>
 	<table class="table">
+	  <thead>
+        <tr>
+          <th>プロフィール画像</th>
+          <th>日記タイトル</th>
+          <th>日記内容</th>
+          <th>投稿画像</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
 		<tr>
 			<td>
 				<%= link_to (@diary.user) do %>
@@ -9,14 +20,15 @@
 				<%= @diary.user.nickname %>
 				<% end %>
 			</td>
-			<td><%= link_to @diary.title, @diary %></td>
-			<td><%= @diary.body %></td>
-			<td><%= attachment_image_tag(@diary, :image, fallback: "no_image.jpg", size: "100x100") %></td>
+			<td class ="diary_show_tbody"><%= @diary.title %></td>
+			<td class ="diary_show_tbody"><%= @diary.body %></td>
+			<td><%= attachment_image_tag(@diary, :image, fallback: "no_image.jpg", size: "300x300") %></td>
 		<% if @diary.user == current_user %>
-			<td><%= link_to "編集する",edit_diary_path(@diary), class: "btn-sm btn-success edit_book_#{@diary.id}" %></td>
-			<td><%= link_to "削除する",@diary, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_book_#{@diary.id}" %></td>
+			<td><%= link_to "編集する",edit_diary_path(@diary), class: "btn-success btn-lg active" %></td>
+			<td><%= link_to "削除する",@diary, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-danger btn-lg active" %></td>
 		<% end %>
 		</tr>
+	  </tbody>
 	</table>
     <div class="diary-comment">
 		<div class="row">
@@ -29,7 +41,6 @@
 		  </div>
 		  <div class="col-sm-1"></div>
 		  <div class="col-sm-6">
-		  	<h1>Myタスクリスト</h1>
           <div>
 		    <div id="comments"><%= render 'diaries/comment', diary_comments: @diary.diary_comments %></div>
 		  </div>

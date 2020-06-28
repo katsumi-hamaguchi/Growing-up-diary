@@ -18,7 +18,7 @@
         <h1>Myタスクリスト</h1>
         <%= form_with(model:@task, remote:true ) do |f| %>
           <span>タスク内容</span><br>
-          <%= f.text_field :body %>
+          <%= f.text_field :body,size:34 %>
           <%= f.submit '追加する' %>
         <% end %>  
 	    <div id="tasks"><%= render 'tasks/index', task: @task, tasks: @tasks %></div>

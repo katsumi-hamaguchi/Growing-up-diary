@@ -47,8 +47,13 @@
 }/*ユーザーマイページ画面のbody（ヘッダー除く）*/
 
 #profile{
-	font-size:250%;
+	font-size:200%;
 }/*ユーザーマイページプロフィール部分*/
+
+.user-dairy-all{
+	font-size:150%;
+	color:green;
+}/*ユーザーマイページの日記一覧*/
 
 .show-goal{
 	font-size:250%;
@@ -60,7 +65,7 @@
 
 .edit-content{
     margin-top:80px;
-	margin-left:100px;
+	margin-left:250px;
 }/*ユーザー情報編集画面のbody（ヘッダー除く）*/
 
 .user-edit-name{

@@ -1,6 +1,11 @@
-<h1>Editing Event</h1>
+<body class ="event-edit-body">
+  <div class="event-edit-content">
+  	<h1>予定の変更</h1>
 
-<%= render 'form', event: @event %>
+	<%= render 'form', event: @event %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+	<%= link_to '詳細を見る', @event %> |
+	<%= link_to '戻る', events_path %>
+
+  </div>
+</body>

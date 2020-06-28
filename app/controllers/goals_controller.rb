@@ -8,10 +8,11 @@ class GoalsController < ApplicationController
     end
 
 	def create
+		@user = current_user
 	    @goal_new = Goal.new(goal_params)
 	    @goal_new.user_id = current_user.id
 	    @goal_new.save
-	    redirect_to root_path		
+	    redirect_to goals_path(@user)		
 	end
 
 	def index
@@ -55,7 +56,7 @@ class GoalsController < ApplicationController
 	    @goal = Goal.find(params[:id])
 	    if @goal.update(goal_params)
 	       flash[:notice] = "目標設定の編集が完了しました"  
-           redirect_to root_path
+           redirect_to goal_path(@goal)
         else
            flash[:notice] = "もう一度ご確認の上、ご入力お願いします。" 
            render "edit"
@@ -63,9 +64,10 @@ class GoalsController < ApplicationController
 	end
 
 	def destroy
+		@user = current_user
 		@goal = Goal.find(params[:id])
 	    @goal.destroy
-	    redirect_to root_path
+	    redirect_to goals_path(@user)
 	end
 
 	private #ストロングパラメータ
