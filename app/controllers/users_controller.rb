@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 		@task = Task.new
 	    @user_current = current_user
 	    @tasks = @user_current.tasks
+	    @diaries = @user.diaries
 	end
 
 	def edit
