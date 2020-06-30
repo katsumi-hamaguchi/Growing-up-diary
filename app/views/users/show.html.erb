@@ -59,6 +59,9 @@
                       <td class="user-dairy-all"><%= diary.title %></td>
                       <td ><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary btn-lg active" %>
                       </td>
+                      <td>
+                        <div id="favorites-<%= diary.id %>"><%= render 'users/favorite', diary: diary %></div>
+                      </td>
                     </tr>
                   <% end %>
                 </tbody>
