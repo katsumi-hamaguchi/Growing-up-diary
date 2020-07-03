@@ -40,13 +40,18 @@
 
 .index-content{
 	margin-top:100px;
-	margin-left:200px;
+	margin-left:100px;
 }/*My日記一覧のbody（検索バー、ヘッダー除く）*/
 
 .dairy-all{
-	font-size:150%;
+	font-size:70%;
 	color:green;
-}/*My日記一覧の内容部分*/
+}/*My日記一覧の投稿一覧項目部分*/
+
+.diary-index-content{
+	font-size:180%;
+	color:black;
+}/*My日記一覧の投稿一覧内容部分*/
 
 .index-all-body{
 	background-image: image-url("goal2_image.jpg");
@@ -56,13 +61,18 @@
 
 .index-all-content	{
 	margin-top:100px;
-	margin-left:200px;
+	margin-left:100px;
 }/*みんなの日記一覧のbody（検索バー、ヘッダー除く）*/
 
 .all-dairy-all{
-	font-size:150%;
+	font-size:70%;
 	color:green;
-}/*みんなの日記一覧の内容部分*/
+}/*みんなの日記一覧の投稿日記一覧項目部分*/
+
+.diary-all-index-content{
+	font-size:180%;
+	color:black;
+}/*みんなの日記一覧の投稿一覧内容部分*/
 
 .diary-show-body{
     background-color:#CEF9DC;
