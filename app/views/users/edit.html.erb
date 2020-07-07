@@ -6,10 +6,10 @@
           <div class='col-xs-2'>
             <span class="c_h">名前</span>
           </div>
-          <div class='col-xs-2'>
+          <div class='col-xs-3'>
            （性）<%= f.text_field :last_name, autofocus: true, class: "user-edit-name", size:15 %>
           </div>
-          <div class='col-xs-2'>
+          <div class='col-xs-3'>
            （名）<%= f.text_field :first_name, autofocus: true, class: "user-edit-name", size:15 %>
           </div>
         </div><br>
@@ -17,10 +17,10 @@
           <div class='col-xs-2'>
             <span class="c_h">フリガナ</span>
           </div>
-          <div class='col-xs-2'>
+          <div class='col-xs-3'>
            （セイ）<%= f.text_field :last_name_kana, autofocus: true, class: "form-user-edit", size:15 %>
           </div>
-          <div class='col-xs-2'>
+          <div class='col-xs-3'>
            （メイ）<%= f.text_field :first_name_kana, autofocus: true, class: "form-user-edit", size:15 %>
           </div>
         </div><br>
@@ -28,7 +28,7 @@
           <div class='col-xs-2'>
             <span class="c_h">ニックネーム</span>
           </div>
-          <div class='col-xs-2'>
+          <div class='col-xs-3'>
             <%= f.text_field :nickname, autofocus: true, class: "user-edit-form", size:15 %>
           </div>
         </div><br>
@@ -36,7 +36,7 @@
           <div class='col-xs-2'>
             <span class="c_h">メールアドレス</span>
           </div>
-          <div class='col-xs-2'>
+          <div class='col-xs-3'>
             <%= f.email_field :email, autofocus: true, class: "user-edit-form", size:15 %>
           </div>
         </div><br>
@@ -44,7 +44,7 @@
           <div class='col-xs-2'>
             <span class="c_h">郵便番号</span>
           </div>
-          <div class='col-xs-2'>
+          <div class='col-xs-3'>
             <%= f.text_field :postcode, autofocus: true, class: "user-edit-form", size:15  %>
           </div>
         </div><br>
@@ -60,18 +60,16 @@
           <div class='col-xs-2'>
             <span>プロフィール画像</span>
           </div>
-          <div class='col-xs-2'>
+          <div class='col-xs-4'>
             <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "150x150" %>
             <%= f.attachment_field :profile_image %>
-          </div>
-        </div><br>
-      <br> 
-        <div class='row'>
-          <div class='col-xs-7'></div>
+          </div><br><br><br><br><br><br>
+          <div class='col-xs-6'>
             <%= f.submit "変更する",class: "btn btn-primary btn-lg active" %>
             <%= link_to ' 退会する', withdrawal_path(current_user.id),class: "btn btn-danger btn-lg active" %>
             <%= link_to "パスワードを変更する", change_pass_path(current_user.id),class: "btn btn-primary btn-lg active" %>
-        </div>
+          </div>
+        </div><br>
       <% end %>
   </div>
 </body>
