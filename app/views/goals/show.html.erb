@@ -45,13 +45,13 @@
 
     <%# {Sun, 14 Jun 2020=>4.2, Mon, 15 Jun 2020=>0, Tue, 16 Jun 2020=>2.4, Wed, 17 Jun 2020=>1.2} %>
     <%# {Sun, 14 Jun 2020=>4.0, Mon, 15 Jun 2020=>4.0, Tue, 16 Jun 2020=>4.0, Wed, 17 Jun 2020=>4.0} %>
-    <div class ="graph-headline">日々の勉強時間の比較</div>
+    <div class ="graph-headline">日々の勉強時間の比較グラフ</div>
       <%= line_chart [
         { name: "毎日の勉強時間", data: @data.group_by_day(:created_at).sum(:study_time) },
         { name: "目標設定時間", data: @goals },
       ] ,height:"700px",colors: ["green", "red"]%>
-
-    <div class ="graph-headline">日々の勉強時間の比較</div>
+    <br><br><br>
+    <div class ="graph-headline">日々の勉強時間の比較グラフ</div>
       <%= line_chart [
         { name: "毎日の勉強時間の累計", data: @stydy_times },
         { name: "目標勉強設定時間の累計", data: @set_times }

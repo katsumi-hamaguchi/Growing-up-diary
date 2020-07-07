@@ -1,37 +1,39 @@
 <body class ="stack-body">
   <div class="stack-content">
-	<h1>日々の積み重ね時間の一覧表示（<%= @goal.stacks.count %>件）</h1>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th class ="stack-headline">プロフィール画像</th>
-          <th class ="stack-headline">ニックネーム</th>
-          <th class ="stack-headline">日付</th>
-          <th class ="stack-headline">勉強時間</th>
-          <th class ="stack-headline">目標タイトル</th>
-          <th class ="stack-headline"></th>
-          <th class ="stack-headline"></th>
-        </tr>
-      </thead>
-      <tbody>
-		<% @goal.stacks.each do |stack| %>
-		  <tr>
-			<td>
-				<%= link_to(stack.user) do %>
-				<%= attachment_image_tag(stack.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %>
+  	<div class='row'>
+	  <div class='col-xs-10'>
+			<h1>日々の積み重ね時間の一覧表示（<%= @goal.stacks.count %>件）</h1>
+		    <table class="table">
+		      <thead>
+		        <tr>
+		          <th class ="stack-headline">プロフィール画像</th>
+		          <th class ="stack-headline">ニックネーム</th>
+		          <th class ="stack-headline">日付</th>
+		          <th class ="stack-headline">勉強時間</th>
+		          <th class ="stack-headline">目標タイトル</th>
+		          <th class ="stack-headline"></th>
+		          <th class ="stack-headline"></th>
+		        </tr>
+		      </thead>
+		      <tbody>
+				<% @goal.stacks.each do |stack| %>
+				  <tr>
+					<td>
+						<%= link_to(stack.user) do %>
+						<%= attachment_image_tag(stack.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %>
+						<% end %>
+					</td>
+					<td class ="stack-tbody"><%= stack.user.nickname %></td>
+					<td class ="stack-tbody"><%= stack.created_at.strftime('%Y/%m/%d') %></td>
+					<td class ="stack-tbody"><%= stack.study_time %>時間</td>
+					<td class ="stack-tbody"><%= stack.goal.title %></td>
+					<td><%= link_to "編集する",edit_goal_stack_path(stack.goal.id,stack.id), class: "btn-success btn-lg active" %></td>
+					<td><%= link_to "削除する",goal_stack_path(stack.goal.id,stack.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-danger btn-lg active" %></td>
+				  </tr>
 				<% end %>
-			</td>
-			<td class ="stack-tbody"><%= stack.user.nickname %></td>
-			<td class ="stack-tbody"><%= stack.created_at.strftime('%Y/%m/%d') %></td>
-			<td class ="stack-tbody"><%= stack.study_time %>時間</td>
-			<td class ="stack-tbody"><%= stack.goal.title %></td>
-			<td><%= link_to "編集する",edit_goal_stack_path(stack.goal.id,stack.id), class: "btn-success btn-lg active" %></td>
-			<td><%= link_to "削除する",goal_stack_path(stack.goal.id,stack.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-danger btn-lg active" %></td>
-			<br>
-		  </tr>
-		<% end %>
-	  </tbody>
-    </table>
+			  </tbody>
+		    </table>
+      </div>
+    </div>
   </div>
 </body>

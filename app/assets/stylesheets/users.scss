@@ -4,32 +4,33 @@
 
 .event-body{
 	background-image: image-url("event5_image.jpg");
-	background-size: 100% 130%;
+	background-size: 100% 1350px;
 	background-repeat: no-repeat;
 	opacity: 1;
 }/*ユーザースケジュール管理画面のbody全体*/
 
 .event-headline{
-	font-size:250%;
+	font-size:35px;
 }/*ユーザースケジュール管理画面の～さんの記録部分*/
 
 .event-title{
-	font-size:180%;
+	font-size:35px;
 }/*ユーザースケジュール管理画面の～さんの記録の各見出し*/
 
 .event-content{
-	font-size:300%;
+	font-size:60px;
 	color:red;
 }/*ユーザースケジュール管理画面の～さんの記録の各見出しの内容*/
 
 .event-goal-content{
-	font-size:300%;
+	font-size:50px;
 	margin-top:20px;
 }/*ユーザースケジュール管理画面の目指す目標の内容*/
 
 .event-btn{
-	font-size:300%;
+	font-size:30px;
 	background-color:#CEF9DC;
+	margin-left:100px;
 }/*ユーザースケジュール管理画面のスケジュール追加ボタン*/
 
 .event-back{
@@ -47,7 +48,7 @@
 }/*ユーザーマイページ画面のbody（ヘッダー除く）*/
 
 #profile{
-	font-size:200%;
+	font-size:25px;
 }/*ユーザーマイページプロフィール部分*/
 
 .user-dairy-all{
@@ -56,7 +57,7 @@
 }/*ユーザーマイページの日記一覧*/
 
 .show-goal{
-	font-size:250%;
+	font-size:20px;
 }/*ユーザーマイページの設定目標の内容部分、項目部分*/
 
 .edit-body{

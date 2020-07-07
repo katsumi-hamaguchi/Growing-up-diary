@@ -4,13 +4,13 @@
 
 .new-body{
 	background-image: image-url("event_image.jpg");
-	background-size: 100% 200%;
+	background-size: 100% 1350px;
 	background-repeat: no-repeat;
 	opacity: 1;
 }/*日記の投稿画面のbody全体*/
 
 .new-content{
-    margin-top:250px;
+    margin-top:115px;
 	margin-left:100px;
 }/*日記の投稿画面のbody（ヘッダー除く）*/
 
@@ -40,16 +40,15 @@
 
 .index-content{
 	margin-top:100px;
-	margin-left:100px;
 }/*My日記一覧のbody（検索バー、ヘッダー除く）*/
 
 .dairy-all{
-	font-size:70%;
+	font-size:10px;
 	color:green;
 }/*My日記一覧の投稿一覧項目部分*/
 
 .diary-index-content{
-	font-size:180%;
+	font-size:16px;
 	color:black;
 }/*My日記一覧の投稿一覧内容部分*/
 
@@ -61,16 +60,15 @@
 
 .index-all-content	{
 	margin-top:100px;
-	margin-left:100px;
 }/*みんなの日記一覧のbody（検索バー、ヘッダー除く）*/
 
 .all-dairy-all{
-	font-size:70%;
+	font-size:10px;
 	color:green;
 }/*みんなの日記一覧の投稿日記一覧項目部分*/
 
 .diary-all-index-content{
-	font-size:180%;
+	font-size:16px;
 	color:black;
 }/*みんなの日記一覧の投稿一覧内容部分*/
 

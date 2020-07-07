@@ -4,39 +4,27 @@
 
 .body-layout{
 	background-image: image-url("top_image.jpg");
-	background-size: 100% 120%;
+	background-size: 100% 1300px;
 	background-position:top;
     color: white;
     background-repeat: no-repeat;
     opacity: 1;
-} //トップページのbody内背景画像設定
+} /*トップページのbody内背景画像設定*/
 
-.a{
-    
-	font-size:150%;
-}
+.top-content{
+	font-size:20px;
+	margin-left:170px;
+}/*トップページの各項目の補足部分*/
 
-.b{
-    margin-top:80px;
+.top-content-title{
+    margin-top:30px;
 	font-size:50px;
 	color:white;
-	text-align: center;
-}
+	text-align:center;
+}/*トップページの各項目部分*/
 
-.bb{
-    margin-top:150px;
-	font-size:50px;
-	color:white;
-	
-}
-
-.c{
-	font-size:50px;
-	color:white;	
-}
-
-.nn{
+.top-nav{
 	font-size:50px;
 	color:white;
 	text-align: center;	
-}
+}/*トップページのログインの有無によっての表示部分*/
