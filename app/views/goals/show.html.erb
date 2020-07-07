@@ -4,23 +4,16 @@
     <table class="table">
       <thead>
         <tr>
-          <th class ="stack-headline">プロフィール画像</th>
           <th class ="stack-headline">目標タイトル</th>
           <th class ="stack-headline">目標詳細</th>
-          <th class ="stack-headline">毎日の目標勉強時間</th>
+          <th class ="stack-headline">毎日の目標時間</th>
         </tr>
       </thead>
       <tbody>
       	<tr>
-      		<td>
-      			<%= link_to (@goal.user) do %>
-      			<%= attachment_image_tag(@goal.user, :profile_image, fallback: "no_image.jpg", size: "60x60") %><br>
-      			<%= @goal.user.nickname %>
-      			<% end %>
-      		</td>
       		<td class ="goal-show-table"><%= @goal.title %></td>
       		<td class ="goal-show-table"><%= @goal.body %></td>
-      		<td class ="goal-show-table">目標勉強時間：<%= @goal.set_time %>時間</td>
+      		<td class ="goal-show-table">勉強時間：<%= @goal.set_time %>時間</td>
       	<% if @goal.user == current_user %>
       		<td><%= link_to "編集する",edit_goal_path(@goal), class: "btn-success btn-lg active" %></td>
       		<td><%= link_to "削除する",@goal, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-danger btn-lg active" %></td>

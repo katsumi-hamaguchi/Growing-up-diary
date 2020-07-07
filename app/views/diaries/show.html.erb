@@ -8,8 +8,8 @@
           <th>日記タイトル</th>
           <th>日記内容</th>
           <th>投稿画像</th>
-          <th></th>
-          <th></th>
+          <th>編集ボタン</th>
+          <th>削除ボタン</th>
         </tr>
       </thead>
       <tbody>
@@ -22,10 +22,12 @@
 			</td>
 			<td class ="diary_show_tbody"><%= @diary.title %></td>
 			<td class ="diary_show_tbody"><%= @diary.body %></td>
-			<td><%= attachment_image_tag(@diary, :image, fallback: "no_image.jpg", size: "300x300") %></td>
+			<td><%= attachment_image_tag(@diary, :image, fallback: "no_image.jpg", size: "280x280") %></td>
 		<% if @diary.user == current_user %>
-			<td><%= link_to "編集する",edit_diary_path(@diary), class: "btn-success btn-lg active" %></td>
-			<td><%= link_to "削除する",@diary, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-danger btn-lg active" %></td>
+			<td><%= link_to "編集する",edit_diary_path(@diary), class: "btn-success btn-lg active" %>
+			</td>
+			<td>
+			<%= link_to "削除する",@diary, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-danger btn-lg active" %></td>
 		<% end %>
 		</tr>
 	  </tbody>
