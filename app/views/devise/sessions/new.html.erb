@@ -26,14 +26,14 @@
 
       <div class="log_btn"> 
       <br>  
-        <%= f.submit "ログイン", class: "btn btn-primary" %>
+        <%= f.submit "ログイン", class: "btn btn-primary btn-lg active" %>
       </div>
     <% end %>
   <br>
     <span class="log-headline">登録がお済みでない方</span><br>
   <br>
     <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    <span class="h_log_g"> <%= link_to "こちら", new_registration_path(resource_name) %>から新規登録を行ってください。</span>
+    <span class="sign-nav"> <%= link_to "こちら", new_registration_path(resource_name) %>から新規登録を行ってください。</span>
     <% end %>
   </div> 
 </body>

@@ -65,7 +65,6 @@
 }/*ユーザー情報編集画面のbody全体*/
 
 .edit-content{
-    margin-top:80px;
 	margin-left:250px;
 }/*ユーザー情報編集画面のbody（ヘッダー除く）*/
 
@@ -89,13 +88,13 @@
 
  .withdrawal-content{
    text-align:center;
-   margin-top:200px;
-   font-size: 450%;
+   margin-top:170px;
+   font-size: 45px;
    color:red;
 }/*ユーザー退会画面のbody（ヘッダー除く）*/
 
 .withdrawal-contents{
-   font-size: 30px;
+   font-size: 28px;
 }/*ユーザー退会画面警告メッセージ*/
 
 .change-pass-body{
@@ -103,7 +102,7 @@
  }/*ユーザーパスワード変更画面のbody全体*/
 
 .change-pass-headline{
-   font-size:250%;
+   font-size:30px;
 }/*ユーザーパスワード変更画面見出し*/
 
 .change-pass-small-headline{
@@ -111,8 +110,8 @@
 }/*ユーザーパスワード変更画面見出し（変更のために～）*/
 
 .change-pass-content{
-   margin-top:200px;
-   margin-left:450px;
+   margin-top:150px;
+   margin-left:350px;
 }/*ユーザーパスワード変更画面のbody（ヘッダー除く）*/
 
 .change-pass-form{

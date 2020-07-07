@@ -31,8 +31,8 @@
 }/*新規登録画面、ログイン画面*/
 
 .sign-headline{
- margin-left:80px;
- font-size:150%;
+ margin-left:30px;
+ font-size:30px;
  background-color:coral;
  }  /*サインインアップ画面のの各見出し*/
 
@@ -51,8 +51,8 @@
  }/*新規登録画面の新規登録ボタン*/
 
  .sign-body{
- margin-top:90px;
- margin-left:400px;
+ margin-top:15px;
+ margin-left:200px;
  } /*新規登録画面のbody全体*/
 
 .sign-form{
@@ -61,21 +61,26 @@
 
 .sign_nodisplay{
 	display:none;
-}
+}/*新規登録画面の都道府県選択部分*/
+
+.log-nav{
+ margin-left:80px;
+ font-size:18px;
+ }/*新規登録画面の、ログイン画面へ部分*/
 
  .log_btn{
- margin-left:700px;
+ margin-left:520px;
  } /*ログイン画面のログインボタン*/
 
  .log-headline{
  margin-left:80px;
- font-size:150%;
+ font-size:30px;
  background-color:coral;
  }  /*ログイン画面画面の各見出し*/
 
  .log-body{
  margin-top:150px;
- margin-left:400px;
+ margin-left:200px;
  } /*ログイン画面のbody全体*/
 
  .log-form{
@@ -83,5 +88,10 @@
  } /*ログイン画面の入力フォーム部分*/
 
  .log-item{
- font-size:150%;
+ font-size:25px;
  } /*ログイン画面の入力フォームの項目部分*/
+
+ .sign-nav{
+ margin-left:80px;
+ font-size:18px;
+ }/*ログイン画面の、こちらから新規登録を行ってください部分*/

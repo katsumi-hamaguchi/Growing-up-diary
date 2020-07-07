@@ -15,7 +15,7 @@
       <br>
         <div class='row'>
           <div class='col-xs-3'>
-            <span class="change-pass-item">変更後のパスワード(確認用)</span>
+            <span class="change-pass-item">変更後のパスワード<br>(確認用)</span>
           </div>
           <div class='col-xs-2'>
             <%= f.password_field :password_confirmation, autocomplete: "new-password", size:60, class: "change-pass-form" %>
@@ -32,7 +32,7 @@
         </div>
       <br><br>
         <div class='row'>
-          <div class='col-xs-1'></div>
+          <div class='col-xs-2'></div>
           <div class='col-xs-3'>
             <%= link_to'キャンセル', user_path(current_user.id) ,class: "btn btn-primary btn-lg active" %>
           </div>
