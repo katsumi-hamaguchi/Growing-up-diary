@@ -44,7 +44,7 @@
       </div>
       <% else %>
         <div class='col-xs-9'>
-          <h1>投稿日記一覧（表示件数<%= @user.diaries.count %>件）</h1>
+          <h1>投稿日記一覧（全投稿日記数<%= @diaries.total_count %>件）</h1>
             <table class ="table">
               <thead>
                 <tr>
@@ -64,7 +64,6 @@
                     </td>
                   </tr>
                 <% end %>
-                <%= paginate @diaries %>
               </tbody>
             </table>
         </div>
