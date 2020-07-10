@@ -14,12 +14,12 @@
 
     <p class="events-show">
       <strong>開始予定:</strong><br><br><br>
-      <%= @event.start %>
+      <%= @event.start.strftime("%Y-%m-%d %H:%M:%S") %>
     </p><br><br>
 
     <p class="events-show">
       <strong>終了予定:</strong><br><br><br>
-      <%= @event.end %>
+      <%= @event.end.strftime("%Y-%m-%d %H:%M:%S") %>
     </p><br><br>
     
     <div class="row">
