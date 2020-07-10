@@ -16,6 +16,7 @@ class DiariesController < ApplicationController
 	def index
 		@user = current_user
 	    @diaries = @user.diaries
+	    @diaries = @user.diaries.page(params[:page]).per(10).reverse_order
 	    @tasks = @user.tasks
 	    @task = Task.new		
 	end
@@ -49,6 +50,7 @@ class DiariesController < ApplicationController
 	def index_all
 		@user = User.find(params[:id])
 	    @diaries = Diary.all
+	    @diaries = Diary.page(params[:page]).per(10).reverse_order
 	    @current_user = current_user
 	    @tasks = @current_user.tasks
 	    @task = Task.new	
