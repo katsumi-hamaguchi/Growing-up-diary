@@ -37,7 +37,24 @@ $(function () {
     $(document).on('turbolinks:before-cache', clearCalendar);
 
     $('#calendar').fullCalendar({
-    events: '/events.json'
+    events: '/events.json',
+    titleFormat: 'YYYY年 M月',
+    dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
+    header: {
+                    left: 'today',
+                    center: 'title',
+                    right: 'prevYear,prev,next,nextYear'
+                },
+    buttonText: {
+                    prev: '前',
+                    next: '次',
+                    prevYear: '前年',
+                    nextYear: '翌年',
+                    today: '今日',
+                },
+    eventColor: '#63ceef',
+    eventTextColor: '#000000',
+    timeFormat: "HH:mm",
     });
 }
 });

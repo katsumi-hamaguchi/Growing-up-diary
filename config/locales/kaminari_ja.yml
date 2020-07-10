@@ -5,4 +5,4 @@ ja:
       last: "最後 &raquo;"
       previous: "&lsaquo; 前へ"
       next: "次へ &rsaquo;"
-      truncate: "..."
+      truncate: "..."        #ページングを日本語対応してしまうと、カレンダーが機能しなくなるため日本語化解除しています
