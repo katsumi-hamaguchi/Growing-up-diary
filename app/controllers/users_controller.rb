@@ -10,6 +10,8 @@ class UsersController < ApplicationController
 	    @user_current = current_user
 	    @tasks = @user_current.tasks
 	    @diaries = @user.diaries
+	    @diaries = @user.diaries.page(params[:page]).per(10).reverse_order
+
 	end
 
 	def edit
