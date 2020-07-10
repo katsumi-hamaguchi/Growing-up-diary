@@ -25,15 +25,11 @@ class GoalsController < ApplicationController
 	def show
 		@goal = Goal.find(params[:id])
 	    @stack_new = Stack.new
-	    #@goal_data= @goal.stacks.group("date(created_at)").count
 	    @data = @goal.stacks
 	    @data1 = Stack.all
 	    @data2 = Goal.all
 	    @user = current_user
 	    @user_data = @user.goals
-	    # {Sun, 14 Jun 2020=>4.2, Mon, 15 Jun 2020=>0, Tue, 16 Jun 2020=>2.4, Wed, 17 Jun 2020=>1.2}
-	    #@data.group_by_day(:created_at).sum(:study_time).map {|key, value| [key, @goal.set_time] }.to_h
-	    # {Sun, 14 Jun 2020=>4.2, Mon, 15 Jun 2020=>4.2, Tue, 16 Jun 2020=>6.6, Wed, 17 Jun 2020=>7.8}
 	    @goals = {}
 	    @stydy_times = {}
 	    @set_times = {}
