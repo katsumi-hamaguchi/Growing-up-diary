@@ -4,31 +4,31 @@
     <div class='row'>
       <div class='col-xs-3'>
         <table id ="profile",class="table">
-    		<tr><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "300x300" %>  
-        </tr><br><br>
-    		<tr>
-    			<th>ニックネーム</th>
-    			<th><%= @user.nickname %></th>
-    		</tr>
-    		<tr>
-    			<th>フォロー人数</th>
-    			<th><%= link_to follows_show_path(@user.id) do %><%= @user.followings.count %>人<% end %></th>
-    		</tr>
-    		<tr>
-    			<th>フォロワー人数</th>
-            	<th><%= link_to followers_show_path(@user.id) do %><%= @user.followers.count %>人<% end %></th>
-            	<%if current_user == @user %>
-            	<%= link_to ' 編集する', edit_user_path(current_user.id),class: "btn btn-primary btn-lg active" %>
-            	<% end %>
-            </tr>
-            <tr>
-              <th>日記投稿数</th>
-              <th><%= @user.diaries.count %>回</th>
-            </tr>  
-            <tr>
-            	<th><%= render "relationships/follow_button", user: @user %></th>
-            	<th></th>
-            </tr>
+      		<tr><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "300x300" %>  
+          </tr><br><br>
+      		<tr>
+      			<th>ニックネーム</th>
+      			<th><%= @user.nickname %></th>
+      		</tr>
+      		<tr>
+      			<th>フォロー人数</th>
+      			<th><%= link_to follows_show_path(@user.id) do %><%= @user.followings.count %>人<% end %></th>
+      		</tr>
+    		  <tr>
+    			  <th>フォロワー人数</th>
+            <th><%= link_to followers_show_path(@user.id) do %><%= @user.followers.count %>人<% end %></th>
+                <%if current_user == @user %>
+            	   <%= link_to ' 編集する', edit_user_path(current_user.id),class: "btn btn-primary btn-lg active" %>
+            	  <% end %>
+          </tr>
+          <tr>
+            <th>日記投稿数</th>
+            <th><%= @user.diaries.count %>回</th>
+          </tr>  
+          <tr>
+          	<th><%= render "relationships/follow_button", user: @user %></th>
+          	<th></th>
+          </tr>
         </table>
       </div>
 
@@ -40,34 +40,33 @@
           <%= f.text_field :body, size:34 %>
           <%= f.submit '追加する' %>
         <% end %>
-          <div id="tasks"><%= render 'tasks/index',tasks: @tasks %></div>
+        <div id="tasks"><%= render 'tasks/index',tasks: @tasks %></div>
       </div>
-        <% else %>
-          <div class='col-xs-9'>
-            <h1>投稿日記一覧（表示件数<%= @user.diaries.count %>件）</h1>
-              <table class ="table">
-                <thead>
+      <% else %>
+        <div class='col-xs-9'>
+          <h1>投稿日記一覧（全投稿日記数<%= @diaries.total_count %>件）</h1>
+            <table class ="table">
+              <thead>
+                <tr>
+                  <th>タイトル</th>
+                  <th></th>
+                  <th>いいね数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @diaries.each do |diary| %>
                   <tr>
-                    <th>タイトル</th>
-                    <th></th>
-                    <th>いいね数</th>
+                    <td class="user-dairy-all"><%= diary.title %></td>
+                    <td ><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary btn-lg active" %>
+                    </td>
+                    <td>
+                      <div id="favorites-<%= diary.id %>"><%= render 'users/favorite', diary: diary %></div>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  <% @diaries.each do |diary| %>
-                    <tr>
-                      <td class="user-dairy-all"><%= diary.title %></td>
-                      <td ><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary btn-lg active" %>
-                      </td>
-                      <td>
-                        <div id="favorites-<%= diary.id %>"><%= render 'users/favorite', diary: diary %></div>
-                      </td>
-                    </tr>
-                  <% end %>
-                  <%= paginate @diaries %>
-                </tbody>
-              </table>
-          </div>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
       <% end %>
 
       <div class='col-xs-4'>
@@ -95,6 +94,12 @@
           </table>  
       </div>
     </div>
+    <%if current_user != @user %>
+    <div class='row'>
+      <div class='col-xs-11'></div>
+      <%= paginate @diaries %><!--投稿日記一覧ページネーションを配置（自分以外のユーザーのマイページのみ表示）-->
+    </div>
+    <% end %>
   </div>
 </body>
 

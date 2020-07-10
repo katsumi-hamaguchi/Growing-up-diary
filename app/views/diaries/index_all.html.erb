@@ -8,19 +8,19 @@
 	<div class="index-all-content">
 		<div class='row'>
 		  <div class='col-xs-8'>
-		    <h1>みんなの投稿日記</h1>
+		    <h1>みんなの投稿日記（全投稿日記数<%= @diaries.total_count %>件）</h1>
 		    <div class ="all-dairy-all">
-	    	　　<table class="table">
-			  　　　<thead>
-					　<tr>
-					　  <th></th>
+	    	    <table class="table">
+			        <thead>
+					  <tr>
+					    <th></th>
 						<th>ニックネーム</th>
 						<th>日記タイトル</th>
 						<th></th>
 						<th>いいね数</th>
 					  </tr>
 			        </thead>
-　　　　　　　　　　  <tbody>
+                    <tbody>
 			          <% @diaries.each do |diary| %>
 						<tr>
 							<td>
@@ -40,7 +40,6 @@
 						    </td>
 						</tr>
 			          <% end %>
-			          <%= paginate @diaries %>
 		            </tbody>
 	            </table>
 		    </div>
@@ -57,5 +56,9 @@
 		    <% end %>
 		  </div>
 		</div>
+		<div class='row'>
+		  <div class='col-xs-7'></div>
+		  <%= paginate @diaries %><!--みんなの投稿日記一覧ページネーションを配置（日記一覧テーブルの下に来るように配置）-->
+	    </div>
     </div>
 </body>

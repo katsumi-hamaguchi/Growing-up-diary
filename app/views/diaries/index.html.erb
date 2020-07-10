@@ -8,7 +8,7 @@
 	<div class="index-content">
 		<div class='row'>
 		  <div class='col-xs-8'>
-		    <h1>投稿日記一覧</h1>
+		    <h1>投稿日記一覧（全投稿日記数<%= @diaries.total_count %>件）</h1>
 		    <div class ="dairy-all">
                 <table class="table">
 				  <thead>
@@ -40,7 +40,6 @@
                         </td>
 					  </tr>
 				    <% end %>
-				    <%= paginate @diaries %>
 			      </tbody>
 		        </table>
 		    </div>
@@ -57,5 +56,9 @@
 		    <% end %>
 		  </div>
 		</div>
+		<div class='row'>
+		  <div class='col-xs-7'></div>
+		  <%= paginate @diaries %><!--投稿日記一覧ページネーションを配置（日記一覧テーブルの下に来るように配置）-->
+	    </div>
     </div>
 </body>
