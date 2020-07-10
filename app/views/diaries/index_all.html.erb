@@ -40,7 +40,6 @@
 						    </td>
 						</tr>
 			          <% end %>
-			          <%= paginate @diaries %>
 		            </tbody>
 	            </table>
 		    </div>
@@ -57,5 +56,9 @@
 		    <% end %>
 		  </div>
 		</div>
+		<div class='row'>
+		  <div class='col-xs-7'></div>
+		  <%= paginate @diaries %><!--みんなの投稿日記一覧ページネーションを配置（日記一覧テーブルの下に来るように配置）-->
+	    </div>
     </div>
 </body>
