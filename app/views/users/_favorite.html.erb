@@ -1,16 +1,11 @@
-
-	<% if diary.favorited_by?(current_user) %>
-	
-	    <%= link_to diary_favorites_path(diary), method: :delete, remote: true do %>
+<% if diary.favorited_by?(current_user) %>
+    <%= link_to diary_favorites_path(diary), method: :delete, remote: true do %>
 	    <span class="glyphicon glyphicon-heart heart"></span>
 	    <%= diary.favorites.count %> いいね
-	    <% end %>
-
-	<% else %>
-
-	    <%= link_to diary_favorites_path(diary), method: :post, remote: true do %>
+    <% end %>
+<% else %>
+    <%= link_to diary_favorites_path(diary), method: :post, remote: true do %>
 	    <span class="glyphicon glyphicon-heart heart-no"></span>
 	    <%= diary.favorites.count %> いいね
-	    <% end %>
-
+    <% end %>
 <% end %>

@@ -54,7 +54,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% @user.diaries.each do |diary| %>
+                  <% @diaries.each do |diary| %>
                     <tr>
                       <td class="user-dairy-all"><%= diary.title %></td>
                       <td ><%= link_to "詳細", diary_path(diary.id),class: "btn btn-primary btn-lg active" %>
@@ -64,6 +64,7 @@
                       </td>
                     </tr>
                   <% end %>
+                  <%= paginate @diaries %>
                 </tbody>
               </table>
           </div>
