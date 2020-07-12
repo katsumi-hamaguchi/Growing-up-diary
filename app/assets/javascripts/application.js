@@ -46,8 +46,8 @@ $(function () {
                     right: 'prevYear,prev,next,nextYear'
                 },
     buttonText: {
-                    prev: '前',
-                    next: '次',
+                    prev: '前月',
+                    next: '次月',
                     prevYear: '前年',
                     nextYear: '翌年',
                     today: '今日',
