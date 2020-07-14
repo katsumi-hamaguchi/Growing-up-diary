@@ -23,7 +23,10 @@ class DiariesController < ApplicationController
 
 	def show
 	    @diary = Diary.find(params[:id])
-	    @diary_comment = DiaryComment.new		
+	    @diary_comment = DiaryComment.new
+	    @diaries = @diary.diary_comments
+	    @diaries = @diary.diary_comments.page(params[:page]).per(10).reverse_order
+	    @diary.diary_comments = @diary.diary_comments.page(params[:page]).per(10).reverse_order
 	end
 
 	def edit
