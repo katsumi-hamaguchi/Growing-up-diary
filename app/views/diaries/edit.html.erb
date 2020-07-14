@@ -23,7 +23,7 @@
             <span class="diary-edit-headline">投稿画像</span>
           </div>
           <div class='col-xs-2'>
-            <%= attachment_image_tag @diary, :image, :fill, 60, 60, fallback: "no_image.jpg"%>
+            <%= attachment_image_tag(@diary, :image, fallback: "no_image.jpg", size: "200x200")%>
             <%= f.attachment_field :image %>
           </div>
         </div><br>
