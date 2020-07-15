@@ -13,7 +13,14 @@
       </div>
       <div class='col-xs-4'>
       	<div class ="event-title">通算勉強時間登録回数</div>
-      	<div class ="event-content"><%= @user.stacks.count %>回！</div><br>
+      	<div class ="event-content"><%= @user.stacks.count %>回！
+          <%if @user.stacks.count >= 20 %>
+            <span class ="event-study-count">この調子で頑張りましょう！！</span>
+          <%elsif @user.stacks.count < 20%>
+            <span class ="event-study-count">目指せ累計30回登録！！</span>
+          <% end %>
+          
+        </div><br>
         <div class ="event-title">累計日記数</div>
         <div class ="event-content"><%= @user.diaries.count %>回投稿！</div><br>
       </div>
