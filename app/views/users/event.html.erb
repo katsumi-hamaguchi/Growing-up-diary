@@ -13,15 +13,26 @@
       </div>
       <div class='col-xs-4'>
       	<div class ="event-title">通算勉強時間登録回数</div>
-      	<div class ="event-content"><%= @user.stacks.count %>回！
-          <%if @user.stacks.count >= 20 %>
-            <span class ="event-study-count">この調子で頑張りましょう！！</span>
-          <%elsif @user.stacks.count < 20%>
-            <span class ="event-study-count">目指せ累計30回登録！！</span>
-          <% end %>
-          
-        </div><br>
+          <%if @user.stacks.count < 30 %>
+            <span class ="event-study-count">まずは、累計30回登録を目標に頑張りましょう！！</span>
+          <%elsif @user.stacks.count < 60 %>
+            <span class ="event-study-count">いい調子で、継続しています！次は、累計60回登録を！！</span>
+          <%elsif @user.stacks.count < 100 %>
+            <span class ="event-study-count">自分の成長を実感出来はじめたころでは？次は１００回を目指していきましょう！</span>
+          <%else%>
+            <span class ="event-study-count">累計登録１００回以上突破！！この調子で継続しましょう！！</span>
+          <% end %>    
+      	<div class ="event-content"><%= @user.stacks.count %>回！</div><br>
         <div class ="event-title">累計日記数</div>
+          <%if @user.stacks.count < 30 %>
+            <span class ="event-study-count">まずは、累計30回投稿を目標にし継続力を！！</span>
+          <%elsif @user.stacks.count < 60 %>
+            <span class ="event-study-count">いい調子で、継続しています！次は、累計60回投稿を！！</span>
+          <%elsif @user.stacks.count < 100 %>
+            <span class ="event-study-count">継続力がついてきていますね！！次は１００回を目指していきましょう！</span>
+          <%else%>
+            <span class ="event-study-count">累計登録１００回以上突破！！この調子で継続しましょう！！</span>
+          <% end %>
         <div class ="event-content"><%= @user.diaries.count %>回投稿！</div><br>
       </div>
       <div class='col-xs-4'>
