@@ -36,7 +36,7 @@
         <div class ="event-content"><%= @user.diaries.count %>回投稿！</div><br>
       </div>
       <div class='col-xs-4'>
-      	<div class ="event-title">目標タイトル一覧</div>
+      	<div class ="event-title">目標タイトル一覧（合計<%= @user.goals.count %>件）</div>
         <div class ="event-goal-content">
         <% @user.goals.each do |user| %>
         <%=user.title %>
